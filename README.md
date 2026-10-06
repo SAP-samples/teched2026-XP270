@@ -28,16 +28,20 @@ The requirements to follow the exercises in this repository are...
 Provide the exercise content here directly in README.md using [markdown](https://guides.github.com/features/mastering-markdown/) and linking to the specific exercise pages, below is an example.
 
 - [Getting Started](exercises/ex0/)
-- [Exercise 1 - First Exercise Description](exercises/ex1/)
-    - [Exercise 1.1 - Exercise 1 Sub Exercise 1 Description](exercises/ex1#exercise-11-sub-exercise-1-description)
-    - [Exercise 1.2 - Exercise 1 Sub Exercise 2 Description](exercises/ex1#exercise-12-sub-exercise-2-description)
+- [Exercise 1 - Introduction](exercises/ex1/)
+    - [Exercise 1.1 - Overview of LeanIX](exercises/ex1#exercise-11-sub-exercise-1-description)
+    - [Exercise 1.2 - Ref ARch](exercises/ex1#exercise-12-sub-exercise-2-description)
 - [Exercise 2 - Build your Agents](exercises/ex2/)
-    - [Exercise 2.1 - Exercise 2 Sub Exercise 1 Description](exercises/ex2#exercise-21-sub-exercise-1-description)
+    - [Exercise 2.1 - Creat a simple ](exercises/ex2#exercise-21-sub-exercise-1-description)
     - [Exercise 2.2 - Exercise 2 Sub Exercise 2 Description](exercises/ex2#exercise-22-sub-exercise-2-description)
 - [Exercise 3 - Observe you Agent](exercises/ex2/)
     - [Exercise 3.1 - Identfy you Agent in LeanIX Agent Hub](exercises/ex2#exercise-21-sub-exercise-1-description)
-    - [Exercise 2.2 - Observe your Agent in CALM](exercises/ex2#exercise-22-sub-exercise-2-description)
+    - [Exercise 3.2 - Onboard a 3rd Party Agent / MCP in LeanIX Agent Hub](exercises/ex2#exercise-21-sub-exercise-1-description)
+    - [Exercise 3.3 - Observe your Agent in CALM](exercises/ex2#exercise-22-sub-exercise-2-description)
     - [Exercise 2.2 - Observe your Agent Signavio](exercises/ex2#exercise-22-sub-exercise-2-description)
+  - [(Optional)Exercise 4 - Build your own Architecture with SAP Architecure Center](exercises/ex2/)
+    - [Exercise 2.1 - Creat a simple ](exercises/ex2#exercise-21-sub-exercise-1-description)
+    - [Exercise 2.2 - Exercise 2 Sub Exercise 2 Description](exercises/ex2#exercise-22-sub-exercise-2-description)
 
   
 **OR** Link to the Tutorial Navigator for example...
