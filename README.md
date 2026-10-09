@@ -36,7 +36,7 @@ Provide the exercise content here directly in README.md using [markdown](https:/
     - [Exercise 2.2 - Exercise 2 Sub Exercise 2 Description](exercises/ex2#exercise-22-sub-exercise-2-description)
 - [Exercise 3 - Observe you Agent](exercises/ex2/)
     - [Exercise 3.1 - Identfy you Agent in LeanIX Agent Hub](exercises/ex2#exercise-21-sub-exercise-1-description)
-    - [Exercise 3.2 - Onboard a 3rd Party Agent / MCP in LeanIX Agent Hub](exercises/ex2#exercise-21-sub-exercise-1-description)
+    - [Exercise 3.2 - Discover a 3rd Party Agent / MCP in LeanIX Agent Hub](exercises/ex2#exercise-21-sub-exercise-1-description)
     - [Exercise 3.3 - Observe your Agent in CALM](exercises/ex2#exercise-22-sub-exercise-2-description)
     - [Exercise 2.2 - Observe your Agent Signavio](exercises/ex2#exercise-22-sub-exercise-2-description)
   - [(Optional)Exercise 4 - Build your own Architecture with SAP Architecure Center](exercises/ex2/)
