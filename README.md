@@ -20,7 +20,7 @@ Provide the exercise content here directly in README.md using [markdown](https:/
 
 - [Getting Started](exercises/ex0/)
 - [Exercise 1 - Introduction](exercises/ex1/)
-    - [Exercise 1.1 - Overview of LeanIX](exercises/ex1#exercise-11-sub-exercise-1-description)
+    - [Exercise 1.1 - Overview of Agent Hub and LeanIX](exercises/ex1#exercise-11-sub-exercise-1-description)
     - [Exercise 1.2 - Ref ARch](exercises/ex1#exercise-12-sub-exercise-2-description)
 - [Exercise 2 - Build your Agents](exercises/ex2/)
     - [Exercise 2.1 - Creat a simple ](exercises/ex2#exercise-21-sub-exercise-1-description)

@@ -1,24 +1,8 @@
-# Level 1 Heading
+## About SAP LeanIX and AI Agent Hub
+SAP LeanIX is SAP's enterprise architecture management platform — the single place where EA and IT governance teams maintain a full inventory of their organization's applications, technologies, and AI agents, track lifecycles, and connect the architecture landscape to business capabilities and strategy.
 
-In this exercise, you will...
+The AI Agent Hub is LeanIX's dedicated module for AI governance. It automatically discovers AI agents across SAP and third-party platforms, and provides structured workflows to assess, verify, and manage them throughout their full lifecycle — giving architects the visibility and control that enterprise-scale AI deployments require.
 
-## Level 2 Heading
-
-After completing these steps you will have....
-
-1.	Click here.
-<br>![](/exercises/ex0/images/00_00_0010.png)
-
-2.	Insert this code.
-``` abap
- DATA(params) = request->get_form_fields(  ).
- READ TABLE params REFERENCE INTO DATA(param) WITH KEY name = 'cmd'.
-  IF sy-subrc <> 0.
-    response->set_status( i_code = 400
-                     i_reason = 'Bad request').
-    RETURN.
-  ENDIF.
-```
 
 ## Summary
 
