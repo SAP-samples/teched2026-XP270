@@ -1,27 +1,18 @@
-# Containing Files
-
-1. The LICENSE file:
-In most cases, the license for SAP sample projects is `Apache 2.0`.
-
-2. The REUSE.toml file: 
-The [Reuse Tool](https://reuse.software/) must be used for your samples project. You can find the REUSE.toml in the project initial. Please replace the parts inside the single angle quotation marks < > by the specific information for your repository.
-
-3. The README.md file (this file):
-Please edit this file as it is the primary description file for your project. You can find some placeholder titles for sections below.
-
-# Session ID - Session Title
+# XP270 - Get Hands-On: Build, Orchestrate & Monitor your AI Agents
 
 ## Description
 
-This repository contains the material for the SAP TechEd 2026 session called Session ID - Session Title.  
+This repository contains the material for the SAP TechEd 2026 session called XP270 - Get Hands-On: Build, Orchestrate & Monitor your AI Agents.
 
 ## Overview
 
-This session introduces attendees to...
+As AI agents move from prototype to production, the real challenge shifts from building to operating. This hands-on session gives you direct experience managing AI agents responsibly at scale on the SAP Business AI Platform — covering the orchestration, monitoring, observability, and access control patterns that enterprise deployments demand.
+
+You will work through a guided, hands-on exercise to build, orchestrate, and monitor custome & standard agents. You will also learn how to discover and observe third-party agents in the LeanIX Agent Hub and SAP Business AI Platform.
 
 ## Requirements
 
-The requirements to follow the exercises in this repository are...
+Basic knowledge of AI agents and the SAP Business AI Platform is recommended.
 
 ## Exercises
 
