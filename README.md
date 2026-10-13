@@ -10,6 +10,8 @@ As AI agents move from prototype to production, the real challenge shifts from b
 
 Across the exercises you will follow a single agent through its whole life: you'll explore and monitor a custom agent in **Joule Studio**, govern it and manage its lifecycle in the **SAP LeanIX AI Agent Hub** (together with the MCP servers it relies on and its identity in **SAP Cloud Identity Services**), observe its behaviour in **SAP Cloud ALM** and **SAP Signavio**, and see where it all fits in the reference architectures published on the **SAP Architecture Center**.
 
+![Agentic AI & AI agents architecture diagram](images/agentic-ai-ai-agents-diagram.png)
+
 ## Requirements
 
 Basic knowledge of AI agents and the SAP Business AI Platform is recommended. No prior experience with Joule Studio or SAP LeanIX is required — we will introduce each one as we go.
