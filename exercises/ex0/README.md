@@ -38,14 +38,13 @@ Take two minutes to understand what each system is for before we start.
 
 ## Log in
 
-👉 Open **Joule Studio** at `<JOULE-STUDIO-URL>` and sign in with your `XP270-0NN` user. You should land in Joule Work, with Joule Studio reachable from the main navigation.
+👉 Open **Joule Studio** and sign in with your `XP270-0NN` user. You should land in Joule Work, with Joule Studio reachable from the main navigation.
 
 ![Joule Studio home in Joule Work](images/00_joule-studio-home.png)
 
-> [!NOTE]
-> The screenshots in these exercises are placeholders to be captured from the live workshop environment. Use them as a rough guide — the live system is the source of truth.
+👉 Open the **SAP LeanIX** and sign in with the shared workspace credentials. From the LeanIX home, open the **AI Agent Hub** — this is where Exercises 3 to 6 take place.
 
-👉 Open the **SAP LeanIX AI Agent Hub** at `<LEANIX-WORKSPACE-URL>` and sign in with the shared workspace credentials. From the LeanIX home, open the **AI Agent Hub** — this is where Exercises 3 to 6 take place.
+![SAP LeanIX AI Agent Hub home](images/00_leanix-ai-agent-hub-home.png)
 
 > [!IMPORTANT]
 > Do not make any changes in LeanIX yet. We will start working with it in Exercise 3. For now, just confirm you can log in.
