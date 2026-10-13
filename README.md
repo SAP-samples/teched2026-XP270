@@ -8,33 +8,31 @@ This repository contains the material for the SAP TechEd 2026 session called XP2
 
 As AI agents move from prototype to production, the real challenge shifts from building to operating. This hands-on session gives you direct experience managing AI agents responsibly at scale on the SAP Business AI Platform — covering the orchestration, monitoring, observability, and access control patterns that enterprise deployments demand.
 
-You will work through a guided, hands-on exercise to build, orchestrate, and monitor custome & standard agents. You will also learn how to discover and observe third-party agents in the LeanIX Agent Hub and SAP Business AI Platform.
+Across the exercises you will follow a single agent through its whole life: you'll explore and monitor a custom agent in **Joule Studio**, govern it and manage its lifecycle in the **SAP LeanIX AI Agent Hub** (together with the MCP servers it relies on and its identity in **SAP Cloud Identity Services**), observe its behaviour in **SAP Cloud ALM** and **SAP Signavio**, and see where it all fits in the reference architectures published on the **SAP Architecture Center**.
 
 ## Requirements
 
-Basic knowledge of AI agents and the SAP Business AI Platform is recommended.
+Basic knowledge of AI agents and the SAP Business AI Platform is recommended. No prior experience with Joule Studio or SAP LeanIX is required — we will introduce each one as we go.
+
+## Business Scenario
+
+Throughout this workshop you work for **GlobalFlex AG**, a manufacturer of custom industrial components. GlobalFlex runs SAP S/4HANA as its ERP backbone and has a fast-growing set of AI agents, introduced by different lines of business — often without central visibility. You are part of the newly established **AI Governance Center of Excellence**, and your job is to operate these agents responsibly: understand what they do, keep them observable, govern their lifecycle, and control who can access them.
+
+The agent at the centre of the story is a **finance agent** running on Joule Studio. You will not build it from scratch — it has been pre-provisioned for you — so you can focus on operating it end to end.
 
 ## Exercises
 
-Provide the exercise content here directly in README.md using [markdown](https://guides.github.com/features/mastering-markdown/) and linking to the specific exercise pages, below is an example.
+- [Getting Started](exercises/ex0/README.md)
+- [Exercise 1 - Agents and the reference architecture](exercises/ex1/README.md)
+- [Exercise 2 - Explore and monitor your agent in Joule Studio](exercises/ex2/README.md)
+- [Exercise 3 - Govern your agent in the SAP LeanIX AI Agent Hub](exercises/ex3/README.md)
+- [Exercise 4 - Observe your agent in SAP Cloud ALM](exercises/ex4/README.md)
+- [Exercise 5 - Discover and govern an MCP server](exercises/ex5/README.md)
+- [Exercise 6 - Observe agent behaviour with SAP Signavio](exercises/ex6/README.md)
+- [(Optional) Exercise 7 - Manage access with SAP Cloud Identity Services](exercises/ex7/README.md)
 
-- [Getting Started](exercises/ex0/)
-- [Exercise 1 - Introduction](exercises/ex1/)
-    - [Exercise 1.1 - Overview of Agent Hub and LeanIX](exercises/ex1#exercise-11-sub-exercise-1-description)
-    - [Exercise 1.2 - Ref ARch](exercises/ex1#exercise-12-sub-exercise-2-description)
-- [Exercise 2 - Build your Agents](exercises/ex2/)
-    - [Exercise 2.1 - Creat a simple ](exercises/ex2#exercise-21-sub-exercise-1-description)
-    - [Exercise 2.2 - Exercise 2 Sub Exercise 2 Description](exercises/ex2#exercise-22-sub-exercise-2-description)
-- [Exercise 3 - Observe you Agent](exercises/ex2/)
-    - [Exercise 3.1 - Identfy you Agent in LeanIX Agent Hub](exercises/ex2#exercise-21-sub-exercise-1-description)
-    - [Exercise 3.2 - Discover a 3rd Party Agent / MCP in LeanIX Agent Hub](exercises/ex2#exercise-21-sub-exercise-1-description)
-    - [Exercise 3.3 - Observe your Agent in CALM](exercises/ex2#exercise-22-sub-exercise-2-description)
-    - [Exercise 2.2 - Observe your Agent Signavio](exercises/ex2#exercise-22-sub-exercise-2-description)
-  - [(Optional)Exercise 4 - Build your own Architecture with SAP Architecure Center](exercises/ex2/)
-    - [Exercise 2.1 - Creat a simple ](exercises/ex2#exercise-21-sub-exercise-1-description)
-    - [Exercise 2.2 - Exercise 2 Sub Exercise 2 Description](exercises/ex2#exercise-22-sub-exercise-2-description)
+The system details and credentials you need are listed once, in [Getting Started](exercises/ex0/README.md).
 
-  
 ## Related Sessions
 
 This workshop is the hands-on complement to the following sessions in the **Build Enterprise-Grade AI Governance as a Foundation** subtrack. Attending them before or after this workshop will deepen your understanding.
@@ -46,14 +44,6 @@ This workshop is the hands-on complement to the following sessions in the **Buil
 | BT116 | Deep Dive | How SAP SE governs AI sprawl with SAP AI Agent Hub | Real-world use case from SAP's own corporate IT team — the governance workflow in practice |
 | BT115 | Deep Dive | Monitor your AI agents with the SAP Cloud ALM solution | Covers the observability layer that sits alongside governance — what happens after you verify an agent |
 | BT800 | Road Map | SAP LeanIX solutions road map for AI-native enterprise architecture | What's coming next for the platform underlying this workshop |
-
-**OR** Link to the Tutorial Navigator for example...
-
-Start the exercises [here](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html).
-
-**IMPORTANT**
-
-Your repo must contain the .reuse and LICENSES folder and the License section below. DO NOT REMOVE the section or folders/files. Also, remove all unused template assets(images, folders, etc) from the exercises folder. 
 
 ## Contributing
 Please read the [CONTRIBUTING.md](./CONTRIBUTING.md) to understand the contribution guidelines.
