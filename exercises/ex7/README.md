@@ -1,61 +1,57 @@
-# Exercise 07 - Manage access with SAP Cloud Identity Services (Optional)
+# Exercise 07 - Close the Control Loop
 
-> [!NOTE]
-> This is an **optional** exercise for those who finish the core path early or want to go deeper on access control. It stands on its own — you can do it independently of the earlier exercises.
+**Duration:** 5 minutes
 
-Throughout this session, access has been "governed by your organization's existing authorization model" — but where does that model actually live for an agent? When your finance agent reads SAP S/4HANA data, *whose* permissions apply? The answer sits in **SAP Cloud Identity Services**, and understanding it is what separates an agent that is safe to operate from one that is a liability.
+In this final exercise, you turn the evidence collected across six products into one architecture decision.
 
-At the end of this exercise, you'll have an understanding of how an agent's identity and authorizations are managed in SAP Cloud Identity Services, and how permissions are enforced at runtime.
+## Step 1 - Complete the Evidence Chain
 
-## Why agents need their own identity
+Use your workshop findings to complete the table:
 
-Back in Exercise 3, the agent's discovery details included a **Cloud Identity Services link** — proof that the agent has a *registered identity*. That identity is what makes authentication, access policies, and user authorizations manageable in one place. An agent that acts on live business data must be as governed as any human user — arguably more so, because it can act faster and at scale.
+| Lifecycle question | Evidence source | Your conclusion |
+|---|---|---|
+| Was the intended behavior specified and tested? | SAP Joule Studio requirements and evaluations | |
+| Was access denied by default and assigned deliberately? | SAP Cloud Identity Services and runtime denial | |
+| Is ownership and business context explicit? | SAP AI Agent Hub fact sheet | |
+| Is the tool boundary governed? | MCP server relationship and assessment | |
+| Is the runtime healthy? | SAP Cloud ALM session and evaluation evidence | |
+| Does behavior conform across executions? | SAP Signavio variants and conformance | |
 
-SAP Cloud Identity Services supports two operational models for how an agent gets its permissions:
+## Step 2 - Make the Decision
 
-| Model | How it works |
-|-------|--------------|
-| **Agent in user context** | The agent acts on behalf of a signed-in user, constrained by that user's permissions |
-| **Autonomous agent** | The agent has its own independent technical identity and its own permissions |
+Choose one decision and state its evidence:
 
-> [!IMPORTANT]
-> At runtime, the **effective permission is the intersection of the user's permissions and the agent's permissions**. Neither the user nor the agent can do something the other is not allowed to do. This is the single most important access-control rule to remember when operating agents — it is what keeps an agent from becoming a way to bypass authorizations.
+- **Activate or continue:** controls pass and no material operational issue remains.
+- **Remediate:** the use case remains valid, but a specific control, dependency, or behavior must change.
+- **Restrict:** reduce users, tool scope, or environment while evidence is incomplete.
+- **Phase out:** business value does not justify the operational, risk, or duplication cost.
 
-## Step 1 — Open the agents view in Cloud Identity Services
+Use this architecture decision record:
 
-👉 Open **SAP Cloud Identity Services** and navigate to the **agents** administration view.
+```text
+Decision:
+Evidence:
+Known risk or missing evidence:
+Owner:
+Action and due date:
+Success measure:
+```
 
-![Agent identities in SAP Cloud Identity Services](images/07_cis-agents.png)
+## End-to-End Result
 
-👉 Locate the identity record for your finance agent (use your participant number). This is the same record the AI Agent Hub linked to in Exercise 3.
+You have completed an enterprise agent control loop:
 
-## Step 2 — Review the agent's identity and authorizations
+```text
+Design -> Test -> Deploy -> Deny -> Authorize -> Execute
+       -> Discover -> Govern -> Monitor -> Mine -> Improve
+```
 
-👉 Review what the identity record holds: the agent's registered identity, how it authenticates, and the authorizations assigned to it.
-
-👉 Identify which operational model applies to your agent — is it acting in a user's context, or does it have an autonomous technical identity?
-
-> [!TIP]
-> Relate this to the **Agent Gateway** from Exercise 1. The Gateway is the governed connection point where these policies are *enforced* at invocation time — authentication, principal propagation, and policy enforcement all happen there. Cloud Identity Services is where the identity and authorizations are *defined*; the Agent Gateway is where they are *applied*.
-
-## Step 3 — Reason about least privilege
-
-👉 Consider the finance agent's job: it reads unmatched invoices and calculates lost discounts. Ask yourself whether its authorizations match that job and no more.
-
-> [!IMPORTANT]
-> **Why this matters:** the goal is least privilege. An agent should hold exactly the access its skills require. Because the effective permission is the intersection of user and agent, over-granting either side widens the blast radius if something goes wrong. Operating responsibly at scale means keeping both sides tight.
-
-## Summary
-
-You've seen where an agent's identity truly lives — SAP Cloud Identity Services — the two operational models for granting it permissions, and the rule that governs runtime access: effective permission is the intersection of user and agent, enforced at the Agent Gateway. This is the access-control foundation underneath everything else you did today.
-
-That completes the workshop. You have operated an AI agent end to end: understood it, monitored it in Joule Studio, governed it and its MCP server in the AI Agent Hub, observed it in Cloud ALM and Signavio, and controlled its access in Cloud Identity Services — the full operations and governance picture for enterprise AI agents on the SAP Business AI Platform.
+The most important lesson is that no single dashboard proves an agent is enterprise-ready. Trust comes from connected evidence across build quality, identity, authorization, ownership, dependencies, runtime health, and business behavior.
 
 ## Further Study
 
-* [SAP Cloud Identity Services](https://help.sap.com/docs/cloud-identity-services?locale=en-US)
-* [Agentic AI and AI Agents on SAP Business AI Platform (reference architecture)](https://architecture.learning.sap.com/docs/ref-arch/98efa0)
+- [Agentic AI & AI Agents on SAP Business AI Platform](https://architecture.learning.sap.com/docs/ref-arch/98efa0)
+- [SAP AI Agent Hub for Enterprise AI Governance](https://architecture.learning.sap.com/docs/ref-arch/jkg4j2)
+- [SAP's Global Standards for Agentic AI](https://architecture.learning.sap.com/docs/global-standards-for-agentic-ai)
 
-## Next
-
-Return to the 👉 [workshop overview](../../README.md).
+Return to the [workshop overview](../../README.md).

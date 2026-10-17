@@ -1,53 +1,107 @@
-# Exercise 06 - Observe agent behaviour with SAP Signavio
+# Exercise 06 - Mine Behavior with SAP Signavio
 
-Metrics tell us *whether* an agent is healthy; they don't tell us *how it actually behaves*. Does our finance agent follow the process we expect? Where does it deviate? Which paths are slow or wasteful? Answering that is **process intelligence** applied to agents — and in the SAP landscape that is **SAP Signavio**.
+**Duration:** 10 minutes
 
-At the end of this exercise, you'll have an understanding of how SAP Signavio mines an agent's execution traces to reveal its real behaviour, and how that complements the monitoring and governance you've already done.
+In this exercise, you use SAP Signavio Process Intelligence to look beyond one trace. You compare execution paths, identify a deviation or bottleneck, and connect agent behavior to a business improvement decision.
 
-## From traces to behaviour
+## Objectives
 
-Every run your agent performs leaves an execution trace — the same raw material you inspected in Joule Studio. **SAP Signavio** ingests these traces and applies **agent mining** to them, giving you three things that pure metrics cannot:
+After this exercise, you can:
 
-- **Behavioural tracing** — the actual sequence of steps and tool calls each run took, reconstructed into process flows
-- **Process conformance** — how closely the agent's real behaviour matches the process it was expected to follow, and where it deviates
-- **Performance benchmarking** — comparing paths and runs across the agent landscape to find the slow or costly ones
+- Explain how OpenTelemetry traces become an event log for process analysis.
+- Distinguish session diagnosis from cross-session behavior mining.
+- Use variants, performance, errors, and conformance as complementary evidence.
+- Identify privacy and tenant-isolation considerations for agent traces.
+
+## From Trace to Event Log
+
+For supported agents, execution traces are normalized by the AI Agent Mining connector into events that SAP Signavio Process Intelligence can analyze.
+
+| Trace concept | Process Intelligence concept |
+|---|---|
+| Agent session or execution | Case |
+| Reasoning/tool step | Event or activity |
+| Start and end time | Timestamp and duration |
+| Agent, model, tool, status | Event attributes |
+
+This transformation enables comparison across many executions. SAP Cloud ALM helped you diagnose one session; SAP Signavio helps you ask whether that path is common, exceptional, non-conforming, or expensive.
+
+## Step 1 - Open the Agent Mining Analysis
+
+Open the shared SAP Signavio workspace and navigate to **Process Intelligence**. Open the analysis supplied by the instructor for AI Agent Mining.
+
+Apply the workshop filters:
+
+- agent type or name: the prepared finance or Billing Adjustment agent;
+- tenant/environment: the workshop tenant;
+- time range: the period supplied by the instructor.
+
+If SAP AI Agent Hub exposes a direct mining link on the agent instance, compare its filters with the analysis you opened manually.
+
+## Step 2 - Read the Performance Overview
+
+Open **Analyze Agent Execution Performance** or the prepared overview page. Inspect the available measures, such as:
+
+- total executions and successful or failed executions;
+- average or percentile duration;
+- tool or LLM cost, where available;
+- activity or tool-call frequency;
+- error and retry patterns.
+
+Choose one signal that matches the Cloud ALM finding. For example, if Cloud ALM showed a slow invoice tool call, look for high duration or repeated calls to that activity across cases.
+
+## Step 3 - Compare Variants
+
+Open the process or variant explorer.
+
+1. Select the most frequent successful path as the baseline.
+2. Select a slower or failed variant.
+3. Compare activity order, retries, loops, skipped steps, and duration.
+4. Decide whether the variant is an expected business exception or an unintended deviation.
+
+Use this reasoning pattern:
+
+```text
+Observed variant -> likely technical or business cause -> business impact -> action
+```
+
+Example:
+
+```text
+Repeated invoice lookup -> retry after backend timeout -> slower discount review
+and risk of missing the payment window -> inspect timeout and retry policy.
+```
+
+## Step 4 - Check Conformance and Value
+
+Where a reference model or conformance view is available, identify an execution that does not follow the expected read-only path.
+
+Ask:
+
+- Did the agent call only approved tools?
+- Did it skip a validation or human checkpoint?
+- Did a retry improve success or only add cost and latency?
+- Did the agent reduce the business cycle time or only shift the bottleneck?
+
+Agent mining should ultimately connect behavior to business outcomes. A technically successful agent is not valuable if invoice handling becomes slower, exceptions rise, or discount savings do not improve.
+
+## Data Privacy Check
+
+Agent traces can contain prompts, identifiers, tool arguments, and business data. Before broadening access to an analysis, architects must check anonymization or pseudonymization, retention, data residency, and tenant isolation. Do not expose raw payloads in screenshots or workshop notes.
 
 > [!NOTE]
-> This is the same discipline SAP Signavio applies to business processes, now pointed at agents. Instead of mining how a purchase order flows through your systems, you mine how your finance agent flows through its own decisions and tool calls.
+> The Architecture Center's agent behavior mining page describes capabilities for next-generation SAP agents and marks parts of the model as forward-looking. Treat the live training tenant and current SAP Help as the source of truth for available fields and supported agent types.
 
-## Step 1 — Open SAP Signavio
+## Checkpoint
 
-👉 Open **SAP Signavio** and navigate to the agent mining / process intelligence area for the finance agent.
-
-![Agent mining in SAP Signavio](images/06_signavio-mining.png)
-
-## Step 2 — Explore the mined behaviour
-
-👉 Review the reconstructed process for your agent. Follow the most common path first — the sequence of steps a typical missed-discount-analysis run takes — then look for the variants.
-
-👉 Look at where runs **deviate** from the expected process. A deviation is not necessarily a bug: it might be a legitimate edge case, or it might reveal the agent taking an unexpected route that is worth investigating.
-
-> [!TIP]
-> Tie this back to Exercise 2. A widening P99 latency in Joule Studio tells you *some runs are slow*; the mined behaviour here can tell you *which path those slow runs take* — for example, a particular tool call that retries. Metrics find the symptom; behaviour mining helps explain it.
-
-## Step 3 — Think in terms of the landscape
-
-👉 Consider how performance benchmarking works across *many* agents, not just one. Signavio can compare behaviour across the agent landscape, so you can spot which agents are efficient and which are candidates for optimization — or, eventually, for decommissioning.
-
-> [!IMPORTANT]
-> **Why this matters:** behaviour mining closes the operate loop. Monitoring (Joule Studio, Cloud ALM) tells you an agent needs attention; governance (AI Agent Hub) controls its lifecycle and approval; and behaviour mining (Signavio) gives you the evidence to decide *what to change* — refine a prompt, fix a tool, or retire the agent.
-
-## Summary
-
-We've seen how SAP Signavio turns raw execution traces into mined behaviour — real process flows, conformance to the expected process, and performance benchmarking across the landscape. Together with Joule Studio monitoring, Cloud ALM operations dashboards, and the AI Agent Hub governance record, you now have the full picture of operating an agent responsibly at scale: build, monitor, govern, observe, and improve.
-
-This completes the core path. The optional exercise that follows goes one level deeper on **access control** — how the agent's identity and authorizations are managed in SAP Cloud Identity Services.
+You identified a common path, a meaningful variant, and one evidence-based improvement action. You can explain why this conclusion required cross-session behavior data rather than a single trace alone.
 
 ## Further Study
 
-* [SAP Signavio Process Intelligence](https://help.sap.com/docs/signavio-process-intelligence?locale=en-US)
-* [Agentic AI and AI Agents on SAP Business AI Platform (reference architecture)](https://architecture.learning.sap.com/docs/ref-arch/98efa0)
+- [Analyze Agent Execution Performance](https://help.sap.com/docs/signavio-process-intelligence/reference-guide-for-value-accelerators/analyze-agent-execution-performance?c=742fb724)
+- [AI Agent Behavior Mining with SAP Signavio](https://architecture.learning.sap.com/docs/ref-arch/3c8d50)
+- [SAP Signavio Process Intelligence](https://help.sap.com/docs/signavio-process-intelligence?locale=en-US)
 
 ## Next
 
-Continue to 👉 [(Optional) Exercise 07 - Manage access with SAP Cloud Identity Services](../ex7/README.md)
+Continue to [Exercise 07 - Close the Control Loop](../ex7/README.md).

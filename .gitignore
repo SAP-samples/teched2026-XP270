@@ -1,0 +1,27 @@
+# OS junk
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editors / IDEs
+.idea/
+.vscode/
+*.swp
+*~
+
+# Secrets / local config
+.env
+.env.*
+
+# Common build artifacts (in case exercises add code)
+__pycache__/
+*.pyc
+node_modules/
+dist/
+build/
+.venv/
+bin/
+obj/
+
+# Local personal notes (ideas, prompts, etc.)
+mho-braindump.md

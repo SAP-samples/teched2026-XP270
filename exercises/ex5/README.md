@@ -1,65 +1,122 @@
-# Exercise 05 - Discover and govern an MCP server
+# Exercise 05 - Diagnose with SAP Cloud ALM
 
-In Exercise 3 we governed an *agent*. But an agent is only as trustworthy as the tools it calls. Our finance agent reaches SAP S/4HANA through an **MCP server** — and that MCP server is an enterprise asset in its own right, with its own owner, risk, and lifecycle. If we govern the agent but ignore the servers it depends on, we have only done half the job.
+**Duration:** 15 minutes
 
-At the end of this exercise, you'll have successfully brought an MCP server under governance in the SAP LeanIX AI Agent Hub, the same way you did for your agent.
+In this exercise, you use the read-only AI Agent Monitoring application in SAP Cloud ALM to move from portfolio health to one concrete execution bottleneck.
 
-## Background
+## Objectives
 
-The AI Agent Hub treats agents, **MCP servers**, and LLMs as first-class objects in the inventory — each gets its own fact sheet, with the same discovery, verification, and lifecycle mechanics. When your finance agent was discovered in Exercise 3, the **Discovered Fact Sheets** panel already listed the MCP servers it uses. Now we govern one of them directly.
+After this exercise, you can:
 
-> [!NOTE]
-> MCP servers are discovered from connected systems just like agents. Among third-party sources, SAP currently provides automated MCP server discovery via **Microsoft** — so an MCP server registered there surfaces in the same Discovery Inbox you already know.
+- Distinguish runtime trace telemetry from evaluation health.
+- Navigate from the landing page to an agent, session, and execution step.
+- Use flow and timeline views to isolate an error or latency contributor.
+- Form a developer handoff that contains enough evidence to act.
 
-## Step 1 — Find the MCP server
+## Safety and Data Path
 
-👉 In the **AI Agent Hub**, open the **Inventory** and filter the type to **MCP Server** to see the MCP servers known to the landscape. Locate the one your finance agent depends on (use your participant number to find yours).
+Your workshop role is a viewer. Do not change collection or connection settings.
 
-> [!TIP]
-> Alternatively, open your agent's fact sheet from Exercise 3 and follow the relationship to its MCP server — the agent-to-tool dependency is itself part of the governed record.
+Agent telemetry is pushed from supported runtimes into SAP Cloud ALM; SAP Cloud ALM does not poll each agent on demand. Two evidence streams may appear:
 
-👉 If your MCP server is still sitting in the **AI Agent Discovery Inbox** with status **Action Needed**, open it there and review its **Overview** — what it exposes, where it was discovered, and which agents relate to it.
+| Evidence stream | What it tells you |
+|---|---|
+| Runtime trace | Which components were called, status, sequence, and duration |
+| Evaluation result | Whether the agent achieved the task and met quality or compliance criteria |
 
-![An MCP server fact sheet in the AI Agent Hub](images/05_mcp-server.png)
+A trace can be present while health or task-success data is blank if the evaluation service has not supplied results.
 
-## Step 2 — Add the MCP server to the inventory
+## Step 1 - Establish the Time Window
 
-👉 Click **Add to Inventory**. The MCP server becomes a governed fact sheet with status **Unverified** — exactly like your agent did.
+Open **AI Agent Monitoring** and select the instructor-provided period that contains prepared workshop sessions.
 
-> [!IMPORTANT]
-> **Why this matters:** an MCP server is the doorway between your agents and your SAP backends. Governing it means you have an owner accountable for it, a record of what it connects to, and a verification decision on the record — so an ungoverned tool cannot quietly become the weakest link behind a verified agent.
+On the landing page, inspect:
 
-## Step 3 — Complete the profile and set the lifecycle
+- total agents and sessions;
+- most-used origins or source runtimes;
+- session trend and volume;
+- common error causes;
+- task success or health information, where populated.
 
-👉 In the MCP server's **Subscriptions** section, add yourself as **Observer** and confirm the **Responsible** owner.
+Choose one question to carry into the drill-down, for example:
 
-👉 Open the **Lifecycle** field and set the **Active** phase to today's date, then **Save** — the same five-phase, date-driven model you used for the agent (Plan, Phase In, Active, Phase Out, End of Life).
+- Did failures increase with volume?
+- Is one origin responsible for most errors?
+- Is a low success rate caused by one agent or a broader dependency?
 
-## Step 4 — Verify the MCP server
+## Step 2 - Open the Agent
 
-👉 Click the **Verification Badge** and select **Mark as Verified**, then set the **Quality Seal** to **Approved**.
+Choose **Agent List** and search for your custom agent. Newly created telemetry may take time to arrive. If it is absent, open the prepared **Billing Adjustment Agent** or the fallback agent specified by the instructor.
 
-> [!NOTE]
-> The **Verification Badge** applies to MCP servers just as it does to agents and LLMs — the same "reviewed and approved to run productively" signal. Your agent and the tool it depends on are now *both* verified, which is what a complete governance picture looks like.
+Record:
 
-## Step 5 (optional) — Discover a third-party agent
+- session count in the selected period;
+- agent health or task success rate, if available;
+- error count or error rate;
+- the slowest or failed session.
 
-If you have time, see how the same flow handles agents that were never built on SAP.
+Do not interpret a missing health value as healthy or unhealthy. It means the evidence is unavailable and should be investigated as an instrumentation issue.
 
-👉 Back in the **AI Agent Discovery Inbox**, change the **Build Type** filter to show agents discovered from third-party platforms (for example, Microsoft Entra ID, Google Cloud, or AWS Bedrock). Open one and note that it carries the same fields and goes through the same review-and-approve process as your Joule Studio agent.
+## Step 3 - Investigate One Session
 
-> [!TIP]
-> This is the point of a vendor-agnostic hub: whether an agent or MCP server is SAP-native, custom, or third-party, it is governed through one consistent workflow and lives in one inventory.
+Open the selected session. Prefer a session that contains both a meaningful execution flow and an error or long-running step.
 
-## Summary
+1. Open **Execution Flow** and follow the calls from the agent to downstream components.
+2. Identify the failed call or the component with the longest duration.
+3. Switch to **Timeline**. Expand the hierarchy to see the same execution as a Gantt-style sequence.
+4. Compare parent and child durations. A long parent span may simply contain one slow child tool call.
+5. Open the detail pane for the problematic step and capture only non-sensitive evidence: component, operation, status, timestamp, duration, and trace/session ID.
 
-We've extended governance from the agent to the **MCP server** it depends on — discovering it, adding it to the inventory, profiling it, placing it in its lifecycle, and verifying it — and seen that third-party agents follow the identical workflow. Governance now covers the agent *and* its tools. Next we'll move from metrics and records to actual behaviour, and mine how our agent runs with SAP Signavio.
+The flow view answers "what called what?" The timeline answers "where was time spent?" Use both before assigning a root cause.
+
+## Step 4 - Interpret Evaluation Health
+
+If evaluation health is available, review the contributing metrics. The prepared landscape may include:
+
+- call correctness;
+- task success rate;
+- output correctness;
+- compliance.
+
+These metrics answer a different question from latency. A fast session can still be incorrect; a slow session can still complete successfully.
+
+If evaluation data is absent, add **evaluation telemetry missing** to the operations finding rather than guessing the agent quality.
+
+## Step 5 - Write the Developer Handoff
+
+Complete this concise handoff:
+
+```text
+Agent:
+Environment and time window:
+Session/trace ID:
+Observed symptom:
+Execution step or dependency:
+Status and duration:
+Evaluation signal (or missing evidence):
+Recommended next check:
+```
+
+Good recommendations are specific. Examples include checking an MCP tool timeout, comparing a prompt or agent version, fixing a backend authorization, or restoring evaluation telemetry.
+
+## Checkpoint
+
+You have moved from an aggregated portfolio signal to one session and one likely contributor, without changing the shared tenant. Your handoff separates observed evidence from a hypothesis.
+
+## Troubleshooting
+
+| Symptom | Action |
+|---|---|
+| New agent is missing | Use the prepared fallback; discovery and telemetry are asynchronous |
+| Sessions exist but health is blank | Continue with trace analysis and flag missing evaluation data |
+| Session has too little detail | Choose the prepared error session from the instructor's time window |
+| Page is slow | Narrow the time range, reload once, and avoid opening multiple session details in parallel |
 
 ## Further Study
 
-* [AI Agent Hub (reference architecture)](https://architecture.learning.sap.com/docs/ref-arch/jkg4j2)
-* [Model Context Protocol (MCP)](https://modelcontextprotocol.io/)
+- [AI Agent Monitoring in SAP Cloud ALM](https://help.sap.com/docs/cloud-alm/applicationhelp/ai-agent-monitoring)
+- [SAP AI Agent Hub Reference Architecture](https://architecture.learning.sap.com/docs/ref-arch/jkg4j2)
 
 ## Next
 
-Continue to 👉 [Exercise 06 - Observe agent behaviour with SAP Signavio](../ex6/README.md)
+Continue to [Exercise 06 - Mine Behavior with SAP Signavio](../ex6/README.md).

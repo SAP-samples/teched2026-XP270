@@ -1,72 +1,86 @@
-# Exercise 01 - Agents and the reference architecture
+# Exercise 01 - Map the Architecture
 
-Now that you can reach the systems, let's build a shared understanding before we start clicking. Operating an agent responsibly is much easier once you know what an agent actually *is* on the SAP Business AI Platform, and how the systems you logged in to fit together.
+**Duration:** 10 minutes
 
-At the end of this exercise, you'll have an understanding of what an AI agent is in Joule Studio and how the SAP Business AI Platform brings building, reasoning, and governance together — the mental model for everything that follows.
+Before building, map one request across the architecture. This prevents a common design error: treating the agent as an isolated prompt instead of an identity-aware component in an enterprise process.
 
-## What is an AI agent?
+## Objectives
 
-In Joule Studio, an **agent** is an AI-powered assistant that understands natural language, accesses SAP data, and executes tasks. Rather than a fixed, hard-coded program, it combines a large language model with tools, instructions, and the ability to decide what to do next. Concretely, an agent:
+After this exercise, you can:
 
-- **Understands natural language** — you ask questions or give commands in plain language.
-- **Accesses SAP systems** — it connects to SAP S/4HANA and other backends through **MCP (Model Context Protocol)** tools, routed via the **Agent Gateway**.
-- **Uses tools and skills** — a **skill** is a specific capability the agent can perform (for example, retrieving invoice data or calculating a financial impact). Skills define the scope of what the agent can do.
-- **Makes decisions** — it determines which APIs to call based on the context of the conversation.
-- **Communicates with other agents** — it can discover and invoke other agents through the **A2A (Agent-to-Agent)** protocol.
+- Distinguish orchestration, agent execution, and tool access.
+- Locate identity, policy enforcement, governance, and observability controls.
+- Define testable acceptance criteria before generating the solution.
+
+## Step 1 - Follow the Runtime Request
+
+Open the SAP Architecture Center reference architecture [Agentic AI & AI Agents on SAP Business AI Platform](https://architecture.learning.sap.com/docs/ref-arch/98efa0).
+
+![Agentic AI and AI agents architecture](../../images/agentic-ai-ai-agents-diagram.png)
+
+Trace this request on the diagram:
+
+> Which five unmatched supplier invoices have the highest early-payment discount at risk?
+
+Use this sequence:
+
+1. The signed-in user states the goal in **Joule Work**.
+2. The Joule orchestrator selects the custom finance agent.
+3. **SAP Agent Gateway** handles discovery, communication, principal propagation, and policy enforcement.
+4. The custom agent reasons over its instructions and chooses an approved tool.
+5. An **MCP server** exposes the relevant SAP S/4HANA capability as a tool.
+6. SAP S/4HANA applies its own business authorization and returns permitted records.
+7. The response and runtime trace flow back to the user and observability services.
 
 > [!NOTE]
-> Every agent carries an **Agent Card** — its identity and capabilities (name, description, version, and the skills it exposes). You will see our finance agent's card in the next exercise, and the same card is what makes the agent discoverable across the landscape.
+> A2A and MCP solve different integration problems. **A2A** is for agent-to-agent discovery and collaboration. **MCP** is for exposing data and actions as tools to an agent. Neither protocol replaces authentication, business authorization, or governance.
 
-> [!IMPORTANT]
-> All SAP system access goes through the **Agent Gateway** — a single, governed connection point. There is no direct database access and no uncontrolled connections. This matters for everything we do later: access is governed by your organization's existing authorization model, which is exactly what makes an agent safe to operate at scale.
+## Step 2 - Find the Cross-Cutting Controls
 
-## The SAP Business AI Platform: build, reason, govern
+Open these Architecture Center views in separate tabs:
 
-![SAP Business AI Platform: Build, Contextualize, Govern](images/baip-build-contextualize-govern.png)
+- [AI Agent Identity and Governance](https://architecture.learning.sap.com/docs/ref-arch/140bdb)
+- [SAP AI Agent Hub for Enterprise AI Governance](https://architecture.learning.sap.com/docs/ref-arch/jkg4j2)
+- [AI Agent Behavior Mining with SAP Signavio](https://architecture.learning.sap.com/docs/ref-arch/3c8d50)
 
-Our finance agent does not live in isolation — it sits on the **SAP Business AI Platform**, which the reference architecture organizes around three pillars:
+The SAP Business AI Platform groups these controls into three phases: build the agent, contextualize it with grounded enterprise data, and govern it across its lifecycle.
 
-| Pillar | What it provides | Where you'll see it today |
-|--------|------------------|---------------------------|
-| **Build** | Development tools for agents and workflows | Joule Studio (Exercise 2) |
-| **Contextualize and Reason** | Harmonized business data and domain knowledge the agent reasons over | The SAP S/4HANA data our agent reads via the Agent Gateway |
-| **Govern** | Lifecycle management, compliance, and observability | SAP LeanIX AI Agent Hub, Cloud ALM, Signavio (Exercises 3 to 6) |
+![Build, contextualize, and govern on SAP Business AI Platform](images/baip-build-contextualize-govern.png)
 
-This is the arc of the whole session: we **build and run** in Joule Studio, we **reason** over governed SAP data, and we **govern and observe** everything through the AI Agent Hub and the observability tools around it.
+Map each concern to the component that primarily answers it:
 
-## Where governance and observability come from
+| Concern | Primary component | Key question |
+|---|---|---|
+| Human and agent identity | SAP Cloud Identity Services | Who is calling and which agent identity is involved? |
+| Runtime enforcement | SAP Agent Gateway and target application | Is this invocation and tool call allowed? |
+| Portfolio governance | SAP AI Agent Hub | Should this agent exist and who owns it? |
+| Developer diagnosis | SAP Joule Studio | What happened in this build or trace? |
+| Operations diagnosis | SAP Cloud ALM | Is the production estate healthy and where did time fail? |
+| Behavior improvement | SAP Signavio | Which paths occur and do they conform to expectations? |
 
-A few supporting components make "operate at scale" possible — keep these names in mind, because you'll meet each one:
+## Step 3 - Define Acceptance Criteria
 
-- **SAP LeanIX (AI Agent Hub)** — the vendor-agnostic command centre for discovering and governing AI agents, MCP servers, and LLMs across the landscape.
-- **SAP Cloud Identity Services** — manages agent identities and authorizations. The effective permission at runtime is the *intersection* of the user's permissions and the agent's permissions.
-- **SAP Cloud ALM** and **SAP Signavio** — receive execution telemetry so you can monitor performance and mine actual behaviour.
+Before generating the agent, agree on these controls:
 
-## See the reference architecture for yourself
+| Criterion | Evidence later in the workshop |
+|---|---|
+| Read-only behavior | Agent instructions and tool scope do not permit payment posting |
+| Grounded output | Every recommendation contains invoice identifiers and values from the tool response |
+| Safe failure | Missing data or denied access produces an explanation, not invented records |
+| Least privilege | Only assigned users can invoke the agent |
+| Accountability | Owner, business context, runtime, identity, and MCP dependency are recorded |
+| Observability | A trace/session identifier connects developer and operations views |
+| Improvement | A slow/error path results in a concrete remediation recommendation |
 
-These patterns are published and maintained on the **SAP Architecture Center** — SAP's home for reference architectures and architecture guidelines. It is worth knowing where to find them when you design your own agentic solutions.
+## Architecture Checkpoint
 
-👉 Open the **Agentic AI and AI Agents on SAP Business AI Platform** reference architecture and check out the solution diagram: [architecture.learning.sap.com/docs/ref-arch/98efa0](https://architecture.learning.sap.com/docs/ref-arch/98efa0)
+Explain to your partner why these statements are both true:
 
-![Agentic AI & AI agents architecture diagram](../../images/agentic-ai-ai-agents-diagram.png)
+- Deploying an agent does not authorize a user to run it.
+- Verifying an agent record does not grant the agent access to SAP business data.
 
-👉 Open the **AI Agent Hub** reference architecture and note how discovery, governance, and observability connect: [architecture.learning.sap.com/docs/ref-arch/jkg4j2](https://architecture.learning.sap.com/docs/ref-arch/jkg4j2).
-
-SAP AI Agent Hub is the enterprise command center for AI governance: a single platform that brings enterprise architecture discipline to AI agent management, built on SAP LeanIX.
-
-The hub addresses a fundamental challenge: while building and deploying individual agents is increasingly straightforward, governing the resulting landscape at scale is not. SAP AI Agent Hub makes the agent estate visible, manageable, and compliant — from the initial planning of a new agent through to its eventual decommissioning.
-
-## Summary
-
-We now share a working definition of an agent — natural language in, governed SAP access out, via skills and the Agent Gateway — and a map of the SAP Business AI Platform's build / reason / govern pillars. We also know these patterns live on the SAP Architecture Center. In the next exercise we'll stop looking at diagrams and open our actual finance agent in Joule Studio.
-
-## Further Study
-
-* [Agents in Joule Studio](https://help.sap.com/docs/joule-studio/joule-studio/agents?locale=en-US)
-* [Agentic AI and AI Agents on SAP Business AI Platform (reference architecture)](https://architecture.learning.sap.com/docs/ref-arch/98efa0)
-* [AI Agent Hub (reference architecture)](https://architecture.learning.sap.com/docs/ref-arch/jkg4j2)
-* [Agent2Agent Protocol](https://a2a-protocol.org/latest/)
+The first separates software lifecycle from user access. The second separates governance approval from runtime enforcement.
 
 ## Next
 
-Continue to 👉 [Exercise 02 - Explore and monitor your agent in Joule Studio](../ex2/README.md)
+Continue to [Exercise 02 - Build and Deploy the Agent](../ex2/README.md).

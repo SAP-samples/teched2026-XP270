@@ -1,96 +1,104 @@
-# Exercise 03 - Govern your agent in the SAP LeanIX - AI Agent Hub
+# Exercise 03 - Enforce Access and Execute
 
-Now that we understand our agent and can see it is healthy in Joule Studio, we switch hats. Joule Studio only sees the agents it runs; as the AI Governance Center of Excellence, we need the whole picture — every agent, MCP server, and LLM across the landscape — and a way to formally approve each one for production. That is what the **SAP LeanIX - AI Agent Hub** gives us.
+**Duration:** 15 minutes
 
-At the end of this exercise, you'll have successfully taken your finance agent from a raw discovery all the way to a verified, governed inventory record.
+In this exercise, you prove that deployment and user access are separate controls. You first observe a denied runtime request, then assign your user to the agent in SAP Cloud Identity Services and repeat the request successfully.
 
-## Background
+## Objectives
 
-The AI Agent Hub automatically discovers agents from connected systems: standard SAP agents, custom agents deployed on Joule Studio, and third-party agents from platforms such as Microsoft Entra ID, Google Cloud, and AWS Bedrock. Whatever its origin, every agent goes through the same review-and-approve process before it enters the governed inventory. Your Joule Studio finance agent has been discovered and is waiting for you.
+After this exercise, you can:
 
-> [!NOTE]
-> Everyone shares one LeanIX workspace, so use your participant number (`XP270-0NN`) to find *your* agent throughout this exercise.
+- Distinguish authentication, user-to-agent access, and backend business authorization.
+- Locate the deployed agent identity in SAP Cloud Identity Services.
+- Explain least privilege and the intersection of user and agent permissions.
+- Compare custom and SAP standard agents under the same identity model.
 
-## Step 1 — Orient yourself in the AI Agent Hub
+## Step 1 - Prove the Default Deny
 
-👉 In **SAP LeanIX**, open the **AI Agent Hub Dashboard** and read the overview: total agents, MCP servers, and LLMs; the **Discovery → Inventory → Verified** pipeline; and the **Connected systems** feeding discovery data in — including Joule Studio, SAP Cloud ALM, and Signavio.
+1. Open **Joule Conversations** or the deployed agent's runtime entry point.
+2. Select `XP270-NN-Missed-Discount-Agent`.
+3. Send the same happy-path request used in Exercise 02.
 
-> [!NOTE]
-> **What you are seeing:** a real-time governance posture — how many agents exist, how many are verified, and how much AI activity is happening in your landscape right now. The **Inventory** holds everything known to the system; the **AI Agent Discovery Inbox** surfaces the items that need your attention.
-
-## Step 2 — Find your agent in the Discovery Inbox
-
-👉 Navigate to **Inventory → Inventory Tools** *(top right)* **→ Discovery Inbox → AI Agent Discovery**.
-
-👉 Apply the filter **Status: Action Needed**, add the **Build Type: Custom** filter, then search for your participant number to find your agent.
-
-👉 Open your discovery item and review the **Overview** — what the agent claims to do, when it first appeared, its **Build Type** (Custom), and the **Discovered Fact Sheets**: the IT component (the Joule Studio runtime), the provider (SAP), and **any MCP servers the agent uses**.
-
-![The agent's discovery record in the AI Agent Hub](images/03_discovery-inbox.png)
-
-👉 Click **Show all details** and note two links in particular:
-
-- the **Joule Studio link**, which opens the agent project you explored in Exercise 2;
-- the **Cloud Identity Services link**, which shows the agent's **identity record** — confirming the agent has a registered identity, so authentication, access policies, and user authorizations can be managed there.
+The invocation should be denied because the deployment has not assigned your user to the agent. Record the visible error category and any correlation or trace ID.
 
 > [!IMPORTANT]
-> **Why this matters:** the Details page shows whether the agent runs in a **productive** environment. If it does, real users may already be interacting with it — potentially against live SAP S/4HANA data — before any governance review has taken place. That is exactly the gap we are closing.
+> A denial here is a successful security test. The platform knows the agent exists but refuses the caller before business data is returned. Do not weaken a policy to hide the error.
 
-## Step 3 — Add your agent to the governed inventory
+If the request succeeds immediately, do not remove a shared assignment. Use the instructor-provided restricted agent to observe the same denied state, then continue with your custom agent.
 
-👉 Click **Add to Inventory**. The agent becomes part of the governed inventory and its status changes to **Unverified**. Open the newly created fact sheet.
+## Step 2 - Locate the Agent Identity
 
-> [!NOTE]
-> The person who deployed the agent is automatically assigned as the **Responsible** subscriber, pulled from the deployment metadata. As the EA team, your role is **Observer** — you'll set that next.
+Open the **Agents** administration view in SAP Cloud Identity Services.
 
-## Step 4 — Complete the governance profile
+1. Search for `XP270-NN-Missed-Discount-Agent`.
+2. Open the matching record and verify its name, global tenant or environment, and source/runtime metadata.
+3. Confirm that your workshop user is not yet in the agent's user assignment.
 
-Subscriptions define who is accountable for the agent and who gets notified when it changes.
+An agent identity is not just a display record. It provides an addressable principal for authentication, scoped authorization, policy decisions, and audit correlation.
 
-👉 In the fact sheet's **Subscriptions** section, add **yourself as Observer**. Confirm the **Responsible** subscriber (the deploying team / business owner) is set.
+## Step 3 - Assign Your User
 
-👉 Check the **Description** is accurate — not a generic template. If it is thin, use LeanIX's built-in **AI-generate** option (the sparkle icon in edit mode) to improve it.
+The exact tab label can vary with the workshop tenant version. In the agent record, open the **Users**, **Assignments**, or **Access** section.
 
-> [!TIP]
-> Fields such as **AI Risk**, **AI Model**, and **Business Criticality** usually come from the agent's business owner. In a full governance process you would collect them with a survey before verifying — in this session your trainer has pre-populated them so we can proceed to verification.
+1. Choose **Add** or **Assign User**.
+2. Search for your exact workshop user, for example `XP268-017`.
+3. Select only your user and confirm the assignment.
+4. Verify that the user now appears in the assigned list.
 
-## Step 5 — Set the lifecycle to Active
+> [!CAUTION]
+> Do not assign a group, another participant, or an administrator role. This exercise grants invocation access to one agent; it does not grant broader SAP S/4HANA permissions.
 
-Before verifying, record where the agent sits in its lifespan. Every fact sheet has a **Lifecycle** field with five date-driven phases:
+## Step 4 - Retry the Custom Agent
 
-| Phase | Meaning |
-|-------|---------|
-| **Plan** | Being considered or designed — not built yet |
-| **Phase In** | Being built, acquired, or rolled out |
-| **Active** | Productive and in active use |
-| **Phase Out** | Being retired or replaced, but still partly in use |
-| **End of Life** | No longer in use |
+Return to the runtime and repeat:
 
-👉 Open the **Lifecycle** field in the fact sheet header, set the **Active** phase to **today's** date, and **Save**. The header now shows the current phase as **Active**.
+```text
+Which five unmatched invoices have the highest early-payment discount at risk?
+Show the source fields used for the calculation.
+```
 
-> [!NOTE]
-> **Why this matters:** the lifecycle is date-driven — LeanIX derives the current phase from the dates you set. Marking the agent Active means it is productive and approved for use, which is what you are about to confirm with verification.
+Confirm all of the following:
 
-## Step 6 — Verify the agent
+- The agent can now be invoked.
+- The response remains read-only and grounded.
+- The result contains only data your user is allowed to see.
+- A new session or trace was created.
 
-Verification is the governance decision point: marking an agent verified formally approves it for production use in your organization.
+Record the successful session or trace identifier. If the denial remains, sign out and in once to refresh the session, then check that the exact user and agent instance were assigned.
 
-👉 In the fact sheet header, click the **Verification Badge** and select **Mark as Verified**. The badge updates to **Agent Verified**.
+## Step 5 - Compare an SAP Standard Agent
 
-👉 Then set the **Quality Seal** (the **Approval State** indicator) to **Approved**.
+Open the SAP standard finance agent specified by the instructor, such as the **Billing Adjustment Agent**.
 
-> [!IMPORTANT]
-> These are two separate signals. The **Verification Badge** is specific to agents, MCP servers, and LLMs — it means *reviewed and approved to run productively* (the AI governance signal). The **Quality Seal** applies to all LeanIX fact sheets — it means *the data on this record meets your data-quality standard*. Both should be set.
+1. Inspect its agent card and build type.
+2. Send the instructor-provided read-only prompt.
+3. If access is denied, check whether the same user-to-agent assignment is missing. Do not change a shared standard-agent assignment without instructor approval.
+4. Compare its identity and authorization behavior with your custom agent.
 
-## Summary
+Both custom and standard agents require a governed identity and an authorized caller. Their build source differs; the need for identity-aware enforcement does not.
 
-Your finance agent is now a fully governed, verified inventory record: discovered, promoted to the inventory, profiled with the right subscribers, placed in its lifecycle, and formally approved for production — with an auditable history of every action in the **Last Updated** tab. In the next exercise we'll turn to how its behaviour is observed in production through SAP Cloud ALM.
+## How Effective Permission Is Determined
+
+For a user-context invocation, effective access is constrained by both sides:
+
+```text
+effective permission = user permission intersection agent permission
+```
+
+- The user cannot use the agent to bypass their SAP business roles.
+- The agent cannot perform an action outside its own approved scope.
+- The target SAP application still makes the final business authorization decision.
+- SAP Agent Gateway applies policy checks along the communication path.
+
+## Checkpoint
+
+You have evidence of one denied invocation, one user-to-agent assignment, and one successful invocation. You can explain why granting agent access did not grant invoice-payment authorization.
 
 ## Further Study
 
-* [AI Agent Discovery (SAP Help Portal)](https://help.sap.com/docs/LEANIX)
-* [AI Agent Hub (reference architecture)](https://architecture.learning.sap.com/docs/ref-arch/jkg4j2)
+- [AI Agent Identity and Governance in SAP Landscapes](https://architecture.learning.sap.com/docs/ref-arch/140bdb)
+- [SAP Cloud Identity Services](https://help.sap.com/docs/cloud-identity-services?locale=en-US)
 
 ## Next
 
-Continue to 👉 [Exercise 04 - Observe your agent in SAP Cloud ALM](../ex4/README.md)
+Continue to [Exercise 04 - Govern the Agent and MCP Server](../ex4/README.md).
