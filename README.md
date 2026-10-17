@@ -2,10 +2,10 @@
 
 ## Description
 
-This repository contains the material for the SAP TechEd 2026 session called XP270 - Get Hands-On: Build, Orchestrate & Monitor your AI Agents.
+This repository contains the material for the SAP TechEd 2026 session **XP270 - Get Hands-On: Build, Orchestrate & Monitor your AI Agents**.
 
 ## Overview
-
+  ..... .     
 As AI agents move from prototype to production, the real challenge shifts from building to operating. This hands-on session gives you direct experience managing AI agents responsibly at scale on the SAP Business AI Platform — covering the orchestration, monitoring, observability, and access control patterns that enterprise deployments demand.
 
 Across the exercises you will follow a single agent through its whole life: you'll explore and monitor a custom agent in **Joule Studio**, govern it and manage its lifecycle in the **SAP LeanIX AI Agent Hub** (together with the MCP servers it relies on and its identity in **SAP Cloud Identity Services**), observe its behaviour in **SAP Cloud ALM** and **SAP Signavio**, and see where it all fits in the reference architectures published on the **SAP Architecture Center**.
