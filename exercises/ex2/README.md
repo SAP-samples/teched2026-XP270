@@ -30,20 +30,26 @@ Our agent performs a **missed discount analysis**. GlobalFlex AG loses money whe
 
 ![The Manage tab in Joule Studio](images/02_agent_manage.png)
 
-Our agent is deployed, Joule Studio gives you built-in observability to track its performance, inspect individual runs, and investigate failures.
+- Settings:
+  - Overview: Our agent is deployed, in this page we can get an overview of the agent and its deployment status. Also, through this page you have built-in observability to track its performance, inspect individual runs, and investigate failures.
+  - Collaboration: The Collaboration feature lets you share a solution with other users in your organization, so you can work together on it. As a solution owner, you control who has access and what they can do.
+- Lifecycle Management: 
+  - Deployments: We can see all deployments of the solution to the managed environment and their status. 
+  - Version: From here, we see the different versions of the solution, which one is the current version and we can undeploy the current solution.
+- Try Deployed Solution: This section allows you to test the deployed agent to ensure it is functioning as expected.
+    ![Try Deployed Solution section in Joule Studio](images/02_agent_try_deployed_solution.png)
 
-👉 Open your agent and select **Manage → Monitoring & Analytics**.
+## Step 3 — Read the Monitoring & Analytics section
 
-You will find three sub-pages. We'll look at each in turn:
+👉 In the Manage tab of the agent, the agent name will be listed under **Monitoring & Analytics**.
+
+You will find two sub-sections. We'll look at each in turn:
 
 - **Monitoring** — aggregated performance over a period
-- **Evaluations** — quality of the agent's responses
 - **Traces** — the detail of individual runs
 
 > [!NOTE]
-> You may need to wait up to five minutes for trace data to appear after an agent run completes. The system retains this data for **90 days**.
-
-## Step 3 — Read the Monitoring & Analytics page
+> You may need to wait up to five minutes for trace data to appear after an agent run completes. The system retains this data for **3 months**.
 
 ![The Monitoring page in Joule Studio](images/02_agent-monitoring-page.png)
 
