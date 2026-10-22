@@ -2,18 +2,18 @@
 
 In a previous exercise we described what an agent is. Now let's meet the real one. GlobalFlex AG's finance team deployed a custom agent on Joule Studio to tackle a very concrete problem — and as the people responsible for operating it, our first job is to understand what it does and whether it is healthy.
 
-At the end of this exercise, you'll have successfully explored your finance agent in Joule Studio and used its built-in observability to judge whether it is running well.
+At the end of this exercise, you'll have successfully explored the finance agent in Joule Studio and used its built-in observability to judge whether it is running well.
 
 ## The agent we are operating
 
-Our agent performs a **missed discount analysis**. GlobalFlex AG loses money when unmatched invoices go unnoticed and early-payment discounts expire. The agent reads unmatched invoices from SAP S/4HANA, calculates the lost early-payment discounts, and quantifies the financial impact of delayed or missed payments.
+The finance team needs faster access to the 10 most recent billing documents from SAP S/4HANA. Our Billing Document Retrieval agent grants us access to the recent billing documents from SAP S/4HANA without having to navigate through SAP screens manually. It provides our finance team with full document details — including status, billing type, and payer — available instantly through a conversational agent.
 
 > [!NOTE]
-> You do not need to build this agent — it has been pre-provisioned for your `XP270-0NN` user. It was created in Joule Studio following the **intent-based development** approach: someone described the outcome they wanted in plain language, and Joule Studio guided them from intent, through a requirements and specification step, to a deployed, monitored solution. In this session we join the story *after* deployment, at the operate stage.
+> You do not need to build this agent — it has been pre-provisioned for the workshop. It was created in Joule Studio following the **intent-based development** approach: someone described the outcome they wanted in plain language, and Joule Studio guided them from intent, through a requirements and specification step, to a deployed, monitored solution. In this session we join the story *after* deployment, at the operate stage.
 
-## Step 1 — Open your agent
+## Step 1 — Open the Billing Document Retrieval agent
 
-👉 In **Joule Studio**, open the solution that contains the Billing Document Retrieval agent for XP270. We land in the **Develop** tab where we can find the solution's artifacts, including the agent itself, its tools (MCP servers), and other related components.
+👉 In **Joule Studio**, open the solution that contains the ***Billing Document Retrieval agent for XP270***. We land in the **Develop** tab where we can find the solution's artifacts, including the agent itself, its tools (MCP servers), and other related components.
 
 ![The Billing Document Retrieval agent in Joule Studio - detail view](images/02_agent-overview.png)
 
