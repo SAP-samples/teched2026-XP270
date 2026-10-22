@@ -13,18 +13,24 @@ Our agent performs a **missed discount analysis**. GlobalFlex AG loses money whe
 
 ## Step 1 — Open your agent
 
-👉 In **Joule Studio**, open the solution that contains your missed discount analysis agent. Use your participant number (`XP270-0NN`) to find *your* copy.
+👉 In **Joule Studio**, open the solution that contains the Billing Document Retrieval agent for XP270. We land in the **Develop** tab where we can find the solution's artifacts, including the agent itself, its tools (MCP servers), and other related components.
 
-![The missed discount analysis agent in Joule Studio - detail view](images/02_agent-overview.png)
+![The Billing Document Retrieval agent in Joule Studio - detail view](images/02_agent-overview.png)
 
-👉 Review the agent's **Agent Card** and **skills**. The card gives the agent its identity (name, description, version); the skills define what it can actually do — here, reading unmatched invoices, calculating lost discounts, and quantifying the financial impact.
+👉 Review the Intent, Requirements, and Specifications. This will give you a good understand of the agent is capable of and how it is expected to operate.
+
+👉 Look at the Solution Artifacts. Connectivity to the SAP S/4HANA Cloud system is established **once**, during deployment, through the **Agent Gateway**, and reused consistently. Mock data is available for testing purposes.
 
 > [!TIP]
-> Look at how the agent reaches SAP S/4HANA. Connectivity is established **once**, during deployment, through the **Agent Gateway**, and reused consistently — there is no direct database access. This is the governed connection point we discussed in Exercise 1.
+> We can test the agent with mock data from the **Preview with Mock data** > **billing-document-retrieval-xp270** section.
 
-## Step 2 — Open Monitoring & Analytics
+## Step 2 — The Manage Tab
 
-Once an agent is deployed, Joule Studio gives you built-in observability to track its performance, inspect individual runs, and investigate failures.
+👉 Go to the **Manage** tab
+
+![The Manage tab in Joule Studio](images/02_agent_manage.png)
+
+Our agent is deployed, Joule Studio gives you built-in observability to track its performance, inspect individual runs, and investigate failures.
 
 👉 Open your agent and select **Manage → Monitoring & Analytics**.
 
@@ -37,7 +43,9 @@ You will find three sub-pages. We'll look at each in turn:
 > [!NOTE]
 > You may need to wait up to five minutes for trace data to appear after an agent run completes. The system retains this data for **90 days**.
 
-## Step 3 — Read the Monitoring page
+## Step 3 — Read the Monitoring & Analytics page
+
+![The Monitoring page in Joule Studio](images/02_agent-monitoring-page.png)
 
 The **Monitoring** sub-page summarizes how your custom agent has performed over the selected period. Start with the two summary cards:
 
@@ -55,18 +63,18 @@ The **Monitoring** sub-page summarizes how your custom agent has performed over 
 > [!IMPORTANT]
 > As the person operating a change, check this view immediately **after** deploying one. Set the time range to cover a period before and after the deployment, and confirm the error rate and latency have not moved meaningfully. A longer prompt, for example, increases inference time — so a prompt change can quietly raise latency.
 
-## Step 4 — Inspect Evaluations and Traces
+## Step 4 — Inspect Traces
 
-👉 Open the **Evaluations** sub-page to see how the quality of the agent's responses is scored over time. Use it to confirm that a change did not cause a regression in answer quality, not just in errors or latency.
+![The Traces page in Joule Studio](images/02_agent-traces.png)
 
 👉 Open the **Traces** sub-page. A trace is the full record of one agent run. In day-to-day operations, this is the view the operations team shares with a developer when they hit a failing run they cannot resolve — they pass the **trace ID**, and the developer opens that exact trace here to investigate the root cause.
 
 > [!TIP]
-> Think about the division of labour this enables: operations watches production health and fields user requests, while developers use Evaluations and Traces to validate changes and chase down specific failures. The trace ID is the handoff between the two.
+> The agent traces are synced to Cloud ALM automatically, allowing you to correlate trace data with other operational and development activities in the cloud environment. Also, the aggregated trace data is synced from Cloud ALM to The AI Agent Hub in LeanIX. We will see this in future exercises.
 
 ## Summary
 
-We've met our finance agent, understood what it does and how it reaches SAP S/4HANA through the Agent Gateway, and used Joule Studio's Monitoring & Analytics to read its health — error rate, latency percentiles, evaluation quality, and individual traces. That is the "operate" view from the *build* side. But Joule Studio only sees agents it runs. In the next exercise we'll switch to the governance side and see our agent appear in the SAP LeanIX AI Agent Hub, alongside every other agent in the landscape.
+We've met our agent, understood what it does and how it reaches SAP S/4HANA through the Agent Gateway, and are now familiar with the Manage section in Joule Studio to understand Monitoring & Analytics that we have available for our agent, e.g. its health — error rate, latency percentiles, evaluation quality, and individual traces. That is the "operate" view from the *build* side. But Joule Studio only sees agents it runs. In the next exercise we'll switch to the governance side and see our agent appear in the SAP LeanIX AI Agent Hub, alongside every other agent in the landscape.
 
 ## Further Study
 
