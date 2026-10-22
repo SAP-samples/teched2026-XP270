@@ -3,6 +3,7 @@
 ## Description
 
 This repository contains the material for the 120-minute SAP TechEd 2026 session **XP270 - Get Hands-On: Build, Orchestrate, and Monitor Your AI Agents**.
+This session will walk you through an agent life-cycle on SAP Business AI Platform.
 
 ## What You Will Do
 
@@ -37,12 +38,11 @@ You will work in two roles:
 
 After completing the workshop, you can:
 
-- Explain the difference between A2A agent collaboration and MCP tool access.
 - Apply intent-based development from requirements through evaluation and deployment.
 - Explain why deployment and user authorization are separate controls.
-- Trace identity and access decisions across SAP Cloud Identity Services and SAP Agent Gateway.
+- Trace identity and access decisions across SAP Cloud Identity Services.
 - Relate an agent to its owner, runtime, business context, identity, and MCP server in SAP AI Agent Hub.
-- Distinguish build-time traces, operational monitoring, and behavior mining.
+- Distinguish build-time traces, operational monitoring in SAP Cloud ALM.
 - Use trace and evaluation evidence to recommend remediation, activation, or decommissioning.
 
 ## Agenda
@@ -66,21 +66,16 @@ The core path is deliberately linear. Keep the same participant number, agent na
 - Basic understanding of APIs, authentication, and AI agents.
 - A modern browser. No local development tools are required.
 - An assigned workshop user and participant number.
-- The roles listed in [Exercise 00](exercises/ex0/README.md). SAP Cloud ALM and SAP Signavio access is read-only.
 
 ## Start
 
 Continue to [Exercise 00 - Get Ready](exercises/ex0/README.md).
 
-## Facilitators
-
-Use the [facilitator runbook](facilitator/README.md) for tenant preparation, safety controls, fallbacks, pacing, and reset tasks.
-
 ## Related Sessions
 
-- XP268 - Govern the agent economy: Secure A2A using SAP's agent gateway
-- AD163 - Discover insights with Process Consulting Agent
-- BT161 - SAP AI Agent Hub: AI Governance Workshop from Discovery to Decommissioning
+- [XP268 - Govern the agent economy: Secure A2A using SAP's agent gateway](https://github.com/SAP-samples/teched2026-XP268)
+- [AD163 - Discover insights with Process Consulting Agent](https://github.com/SAP-samples/teched2026-AD163)
+- [BT161 - SAP AI Agent Hub: AI Governance Workshop from Discovery to Decommissioning](https://github.com/SAP-samples/teched2026-BT161)
 
 ## Support
 

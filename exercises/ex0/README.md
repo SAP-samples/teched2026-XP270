@@ -2,15 +2,14 @@
 
 **Duration:** 10 minutes
 
-In this exercise, you verify access to the workshop landscape and define the identifiers you will use in every later exercise.
+In this exercise, you learn the overall architecture of the relevant components and systems on SAP Business AI Platform.Furthermore you verify access to the workshop landscape and define the identifiers you will use in every later exercise.
 
 ## Objectives
 
 After this exercise, you can:
 
-- Identify the role of each product in the end-to-end flow.
-- Locate your assigned systems without sharing credentials.
-- Define a unique agent name that is easy to correlate across systems.
+- Identify the role of each component / system / product in the end-to-end flow
+- Locate your assigned systems and verify system access
 
 ## Step 1 - Record Your Workshop Identifiers
 
@@ -26,7 +25,7 @@ Record these values locally. Do not put passwords or secrets in this repository.
 | Custom solution | `XP270-NN-Finance-Control` | `XP270-017-Finance-Control` |
 
 > [!IMPORTANT]
-> The technical workshop user may use the `XP268-NN` pattern even though this session is XP270. Always use the exact user assigned by the instructor. `XP270-000` is reserved for facilitator or demo activities unless instructed otherwise.
+> The technical workshop user may use the `XP268-NN` pattern even though this session is XP270. Always use the exact user assigned by the instructor.
 
 ## Step 2 - Verify System Access
 

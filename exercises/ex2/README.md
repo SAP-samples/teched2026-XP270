@@ -15,11 +15,14 @@ After this exercise, you can:
 
 ## Step 1 - Create the Solution
 
-1. In Joule Work, choose **Develop** to open **SAP Joule Studio**.
-2. Choose **Create** and select **Agent**.
-3. Turn off **Quick Create** and select **Ideate and Plan**. The full flow is intentional: architects need the requirements and specification as governance evidence, and developers need them as a review boundary before code generation.
-4. Name the solution `XP270-NN-Finance-Control`.
-5. Paste this intent, replacing `NN` in the solution and agent names with your participant number:
+1. Open [SAP Joule Studio](https://747326606.eu10.sapdas.cloud.sap/) in a new browser tab and sign in with your workshop user.
+![Open JSTD](./images/ext2-01.png)
+
+1. In Joule Work, choose **Joule Studio** in the left-hand navigation menu to open **SAP Joule Studio**.
+1. Choose **Create** and select **Agent**.
+1. Turn off **Quick Create** and select **Ideate and Plan**. The full flow is intentional: architects need the requirements and specification as governance evidence, and developers need them as a review boundary before code generation.
+1. Name the solution `XP270-NN-Finance-Control`.
+1. Paste this intent, replacing `NN` in the solution and agent names with your participant number:
 
 ```text
 Create a read-only agent for accounts payable analysts named

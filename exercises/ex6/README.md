@@ -28,7 +28,9 @@ This transformation enables comparison across many executions. SAP Cloud ALM hel
 
 ## Step 1 - Open the Agent Mining Analysis
 
-Open the shared SAP Signavio workspace and navigate to **Process Intelligence**. Open the analysis supplied by the instructor for AI Agent Mining.
+1. Open the [shared SAP Signavio workspace](https://editor.signavio.com/p/hub/home?t=ae8cd097deb64fad81835f4ac2fb9af7) in a new tab and sign in with the account supplied by the instructor.
+2. Choose **Process Intelligence**.
+3. Open the analysis supplied by the instructor for AI Agent Mining.
 
 Apply the workshop filters:
 

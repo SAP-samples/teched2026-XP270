@@ -15,7 +15,7 @@ After this exercise, you can:
 
 ## Step 1 - Prove the Default Deny
 
-1. Open **Joule Conversations** or the deployed agent's runtime entry point.
+1. Open [Joule](https://747326606.eu10.sapdas.cloud.sap/) and return to **Joule Conversations** or the deployed agent's runtime entry point.
 2. Select `XP270-NN-Missed-Discount-Agent`.
 3. Send the same happy-path request used in Exercise 02.
 
@@ -28,7 +28,7 @@ If the request succeeds immediately, do not remove a shared assignment. Use the 
 
 ## Step 2 - Locate the Agent Identity
 
-Open the **Agents** administration view in SAP Cloud Identity Services.
+Open the [Agents administration view in SAP Cloud Identity Services](https://teched02.accounts.ondemand.com/admin/#/agents?global_tenant_id=213a6874-0ba0-4cbc-b896-139abdd080c5) in a new tab.
 
 1. Search for `XP270-NN-Missed-Discount-Agent`.
 2. Open the matching record and verify its name, global tenant or environment, and source/runtime metadata.

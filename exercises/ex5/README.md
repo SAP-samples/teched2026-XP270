@@ -28,7 +28,12 @@ A trace can be present while health or task-success data is blank if the evaluat
 
 ## Step 1 - Establish the Time Window
 
-Open **AI Agent Monitoring** and select the instructor-provided period that contains prepared workshop sessions.
+1. Open the **SAP Cloud ALM application URL supplied by the instructor**. The `accounts.ondemand.com` address used for authentication is an identity-provider page, not the SAP Cloud ALM application.
+2. Choose **AI Agent Monitoring**.
+3. Select the instructor-provided period that contains prepared workshop sessions.
+
+> [!IMPORTANT]
+> Do not bookmark or share the identity-provider redirect as the workshop URL. Always begin with the SAP Cloud ALM application URL so the login flow can return you to AI Agent Monitoring.
 
 On the landing page, inspect:
 

@@ -15,7 +15,7 @@ After this exercise, you can:
 
 ## Step 1 - Read the Portfolio Posture
 
-Open **SAP AI Agent Hub** in SAP LeanIX and start on the dashboard.
+Open [SAP AI Agent Hub in SAP LeanIX](https://de-6.leanix.net/trainingsystemarchitects) in a new tab and start on the dashboard.
 
 Review the available portfolio indicators:
 
