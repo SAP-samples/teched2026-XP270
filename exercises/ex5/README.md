@@ -4,6 +4,13 @@ In Exercise 2 we watched our agent's health from the *build* side, in Joule Stud
 
 At the end of this exercise, you'll have an understanding of how agent telemetry reaches SAP Cloud ALM and what the operations team watches there.
 
+> [!IMPORTANT]  <br/>System details and credentials for this exercise 🔐 <br/><br/>
+> The table below shows the system referenced in this exercise. Refer to [Exercise 00](../ex0/README.md) for the full credentials list.
+>
+> | System | URL | Credentials |
+> | ---- | ---- | ---- |
+> | SAP Cloud ALM | https://url.sap/a3ml53 | User `XP270-0NN` (your participant number) |
+
 > [!IMPORTANT]
 > This exercise is a **guided, read-only walkthrough**. Your trainer will demonstrate SAP Cloud ALM live — you do not need to log in. Follow along with the screenshots and focus on *what* is being shown and *why* it matters, rather than clicking yourself.
 

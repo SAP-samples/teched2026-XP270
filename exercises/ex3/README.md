@@ -4,6 +4,13 @@ Now that we understand our agent and can see it is healthy in Joule Studio, we s
 
 At the end of this exercise, you'll be familiar with the agent information available in AI Agent Hub, the discovery of agents, the fact sheet structure, and analytics available for an agent.
 
+> [!IMPORTANT]  <br/>System details and credentials for this exercise 🔐 <br/><br/>
+> The table below shows the system you will use in this exercise. Refer to [Exercise 00](../ex0/README.md) for the full credentials list.
+>
+> | System | URL | Credentials |
+> | ---- | ---- | ---- |
+> | SAP LeanIX — AI Agent Hub | https://url.sap/9rm72k | User `XP270-0NN` (your participant number) |
+
 ## Background
 
 The AI Agent Hub automatically discovers agents from connected systems: standard SAP agents, custom agents deployed on Joule Studio, and third-party agents from platforms such as Microsoft Entra ID, Google Cloud, and AWS Bedrock. Whatever its origin, every agent goes through the same review-and-approve process before it enters the governed inventory. The Joule Studio finance agent has been discovered and is waiting for you.

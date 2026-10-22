@@ -7,6 +7,13 @@ Metrics tell us *whether* an agent is healthy; they don't tell us *how it actual
 
 At the end of this exercise, you'll have an understanding of how SAP Signavio mines an agent's execution traces to reveal its real behaviour, and how that complements the monitoring and governance you've already done.
 
+> [!IMPORTANT]  <br/>System details and credentials for this exercise 🔐 <br/><br/>
+> The table below shows the system you will use in this exercise. Refer to [Exercise 00](../ex0/README.md) for the full credentials list.
+>
+> | System | URL | Credentials |
+> | ---- | ---- | ---- |
+> | SAP Signavio | https://url.sap/p851or | User `XP270-0NN` (your participant number) |
+
 ## From traces to behaviour
 
 Every run your agent performs leaves an execution trace — the same raw material you inspected in Joule Studio. **SAP Signavio** ingests these traces and applies **agent mining** to them, giving you three things that pure metrics cannot:

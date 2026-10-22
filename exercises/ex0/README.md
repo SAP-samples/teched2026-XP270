@@ -12,9 +12,10 @@ At the end of this exercise, you'll have successfully logged in to the systems y
 > | System | URL | Credentials |
 > | ---- | ---- | ---- |
 > | Joule Studio | https://url.sap/fc8j65 | User `XP270-0NN` (your participant number) |
-> | SAP LeanIX — AI Agent Hub | https://url.sap/9rm72k | Shared workspace, provided at the start of the session |
-> | SAP Signavio | https://url.sap/p851or | Provided at the start of the session |
-> | SAP Cloud ALM | `<CALM-URL>` | Presenter demo — no login required |
+> | SAP LeanIX — AI Agent Hub | https://url.sap/9rm72k | User `XP270-0NN` (your participant number) |
+> | SAP Cloud Identity Services | N/A | Presenter demo — no login required |
+> | SAP Cloud ALM | https://url.sap/a3ml53 | User `XP270-0NN` (your participant number) |
+> | SAP Signavio | https://url.sap/p851or | User `XP270-0NN` (your participant number) |
 
 
 ## Your participant number

@@ -4,6 +4,9 @@ Now that you can reach the systems, let's build a shared understanding before we
 
 At the end of this exercise, you'll have an understanding of what an AI agent is in Joule Studio and how the SAP Business AI Platform brings building, reasoning, and governance together — the mental model for everything that follows.
 
+> [!IMPORTANT]  <br/>System details and credentials for this exercise 🔐 <br/><br/>
+> This exercise is theory only — no hands-on system access or login is required. Refer to [Exercise 00](../ex0/README.md) for the full credentials list when you need it.
+
 ## What is an AI agent?
 
 In Joule Studio, an **agent** is an AI-powered assistant that understands natural language, accesses SAP data, and executes tasks. Rather than a fixed, hard-coded program, it combines a large language model with tools, instructions, and the ability to decide what to do next. Concretely, an agent:

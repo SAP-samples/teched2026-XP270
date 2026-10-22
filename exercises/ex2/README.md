@@ -4,6 +4,13 @@ In a previous exercise we described what an agent is. Now let's meet the real on
 
 At the end of this exercise, you'll have successfully explored the finance agent in Joule Studio and used its built-in observability to judge whether it is running well.
 
+> [!IMPORTANT]  <br/>System details and credentials for this exercise 🔐 <br/><br/>
+> The table below shows the system you will use in this exercise. Refer to [Exercise 00](../ex0/README.md) for the full credentials list.
+>
+> | System | URL | Credentials |
+> | ---- | ---- | ---- |
+> | Joule Studio | https://url.sap/fc8j65 | User `XP270-0NN` (your participant number) |
+
 ## The agent we are operating
 
 The finance team needs faster access to the 10 most recent billing documents from SAP S/4HANA. Our Billing Document Retrieval agent grants us access to the recent billing documents from SAP S/4HANA without having to navigate through SAP screens manually. It provides our finance team with full document details — including status, billing type, and payer — available instantly through a conversational agent.

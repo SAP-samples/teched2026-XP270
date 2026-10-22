@@ -4,6 +4,13 @@ Throughout this session, access has been "governed by the organization's existin
 
 At the end of this exercise, you'll have an understanding of how an agent's identity and authorizations are managed in SAP Cloud Identity Services, and how permissions are enforced at runtime.
 
+> [!IMPORTANT]  <br/>System details and credentials for this exercise 🔐 <br/><br/>
+> The table below shows the system referenced in this exercise. Refer to [Exercise 00](../ex0/README.md) for the full credentials list.
+>
+> | System | URL | Credentials |
+> | ---- | ---- | ---- |
+> | SAP Cloud Identity Services | N/A | Presenter demo — no login required |
+
 > [!IMPORTANT]
 > This is a read-only exercise. Unfortunately, we cannot provide hands-on access to SAP Cloud Identity Services but following the explanations and screenshots in this exercise will give you a clear understanding of how it works. The screenshots correspond to the SAP Cloud Identity Services managing the access for the workshop's landscape.
 
