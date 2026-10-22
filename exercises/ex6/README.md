@@ -1,4 +1,7 @@
-# Exercise 06 - Observe agent behaviour with SAP Signavio
+# Exercise 06 - Observe agent behaviour with SAP Signavio (Optional)
+
+> [!NOTE]
+> This is an **optional** exercise for those who finish the core path early or want to go deeper on behavioural observability. It stands on its own — you can do it independently of the earlier exercises.
 
 Metrics tell us *whether* an agent is healthy; they don't tell us *how it actually behaves*. Does our finance agent follow the process we expect? Where does it deviate? Which paths are slow or wasteful? Answering that is **process intelligence** applied to agents — and in the SAP landscape that is **SAP Signavio**.
 
@@ -39,9 +42,9 @@ Every run your agent performs leaves an execution trace — the same raw materia
 
 ## Summary
 
-We've seen how SAP Signavio turns raw execution traces into mined behaviour — real process flows, conformance to the expected process, and performance benchmarking across the landscape. Together with Joule Studio monitoring, Cloud ALM operations dashboards, and the AI Agent Hub governance record, you now have the full picture of operating an agent responsibly at scale: build, monitor, govern, observe, and improve.
+We've seen how SAP Signavio turns raw execution traces into mined behaviour — real process flows, conformance to the expected process, and performance benchmarking across the landscape. Together with Joule Studio monitoring, Cloud ALM operations dashboards, the AI Agent Hub governance record, and the Cloud Identity Services access model, you now have the full picture of operating an agent responsibly at scale: build, monitor, govern, observe, and improve.
 
-This completes the core path. The optional exercise that follows goes one level deeper on **access control** — how the agent's identity and authorizations are managed in SAP Cloud Identity Services.
+That completes the workshop. You have operated an AI agent end to end: understood it, monitored it in Joule Studio, governed it and its MCP server in the AI Agent Hub, managed its identity in Cloud Identity Services, observed it in Cloud ALM, and mined its behaviour with Signavio — the full operations and governance picture for enterprise AI agents on the SAP Business AI Platform.
 
 ## Further Study
 
@@ -50,4 +53,4 @@ This completes the core path. The optional exercise that follows goes one level 
 
 ## Next
 
-Continue to 👉 [(Optional) Exercise 07 - Manage access with SAP Cloud Identity Services](../ex7/README.md)
+Return to the 👉 [workshop overview](../../README.md).

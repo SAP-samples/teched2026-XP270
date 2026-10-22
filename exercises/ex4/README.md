@@ -1,48 +1,56 @@
-# Exercise 04 - Observe your agent in SAP Cloud ALM
+# Exercise 04 - Manage access with SAP Cloud Identity Services
 
-In Exercise 2 we watched our agent's health from the *build* side, in Joule Studio. In Exercise 3 we governed it. Now we look at the dedicated **operations** view. In an enterprise, day-to-day production health is typically watched by an operations team — and the tool they use for that across SAP solutions is **SAP Cloud ALM**.
+Throughout this session, access has been "governed by your organization's existing authorization model" — but where does that model actually live for an agent? When your finance agent reads SAP S/4HANA data, *whose* permissions apply? The answer sits in **SAP Cloud Identity Services**, and understanding it is what separates an agent that is safe to operate from one that is a liability.
 
-At the end of this exercise, you'll have an understanding of how agent telemetry reaches SAP Cloud ALM and what the operations team watches there.
+At the end of this exercise, you'll have an understanding of how an agent's identity and authorizations are managed in SAP Cloud Identity Services, and how permissions are enforced at runtime.
+
+## Why agents need their own identity
+
+Back in Exercise 3, the agent's discovery details included a **Cloud Identity Services link** — proof that the agent has a *registered identity*. That identity is what makes authentication, access policies, and user authorizations manageable in one place. An agent that acts on live business data must be as governed as any human user — arguably more so, because it can act faster and at scale.
+
+SAP Cloud Identity Services supports two operational models for how an agent gets its permissions:
+
+| Model | How it works |
+|-------|--------------|
+| **Agent in user context** | The agent acts on behalf of a signed-in user, constrained by that user's permissions |
+| **Autonomous agent** | The agent has its own independent technical identity and its own permissions |
 
 > [!IMPORTANT]
-> This exercise is a **guided, read-only walkthrough**. Your trainer will demonstrate SAP Cloud ALM live — you do not need to log in. Follow along with the screenshots and focus on *what* is being shown and *why* it matters, rather than clicking yourself.
+> At runtime, the **effective permission is the intersection of the user's permissions and the agent's permissions**. Neither the user nor the agent can do something the other is not allowed to do. This is the single most important access-control rule to remember when operating agents — it is what keeps an agent from becoming a way to bypass authorizations.
 
-## How telemetry gets to Cloud ALM
+## Step 1 — Open the agents view in Cloud Identity Services
 
-Session telemetry from SAP-managed agents flows automatically into **SAP Cloud ALM**, where it drives performance dashboards. This is the same execution data you saw summarized in Joule Studio — but presented for operations: aggregated across agents, trended over time, and designed for someone watching the whole landscape rather than debugging a single solution.
+👉 Open **SAP Cloud Identity Services** and navigate to the **agents** administration view.
 
-> [!NOTE]
-> Recall the Connected systems on the AI Agent Hub dashboard from Exercise 3 — **SAP Cloud ALM** was one of them. The AI Agent Hub also surfaces this observability so governance and operations share a consistent view.
+![Agent identities in SAP Cloud Identity Services](images/07_cis-agents.png)
 
-## Step 1 — Watch the agent observability dashboard
+👉 Locate the identity record for your finance agent (use your participant number). This is the same record the AI Agent Hub linked to in Exercise 3.
 
-👉 Follow along as your trainer opens the agent observability dashboards in **SAP Cloud ALM**.
+## Step 2 — Review the agent's identity and authorizations
 
-![Agent performance dashboard in SAP Cloud ALM](images/04_calm-dashboard.png)
+👉 Review what the identity record holds: the agent's registered identity, how it authenticates, and the authorizations assigned to it.
 
-As the dashboard is shown, note the kinds of signal operations rely on:
-
-- **Evaluation rates** — how well the agent's responses are scoring over time
-- **Error patterns** — where and how runs are failing, and whether failures cluster
-- **Session volumes** — how much the agent is actually being used
-- **Trends** — how all of the above move day over day
-
-## Step 2 — Connect it back to what you've seen
-
-👉 As you watch, map each Cloud ALM signal to its Joule Studio counterpart from Exercise 2 — error patterns to the Trace Error Rate chart, session volumes to Trace Count, and so on.
+👉 Identify which operational model applies to your agent — is it acting in a user's context, or does it have an autonomous technical identity?
 
 > [!TIP]
-> The distinction is about audience, not data. **Joule Studio** monitoring is where a *developer* validates a change or investigates a specific trace. **Cloud ALM** is where *operations* watches production health across many agents and decides when to escalate. When operations finds a failing run they cannot resolve, they hand the **trace ID** back to the developer — closing the loop you saw in Exercise 2.
+> Relate this to the **Agent Gateway** from Exercise 1. The Gateway is the governed connection point where these policies are *enforced* at invocation time — authentication, principal propagation, and policy enforcement all happen there. Cloud Identity Services is where the identity and authorizations are *defined*; the Agent Gateway is where they are *applied*.
+
+## Step 3 — Reason about least privilege
+
+👉 Consider the finance agent's job: it reads unmatched invoices and calculates lost discounts. Ask yourself whether its authorizations match that job and no more.
+
+> [!IMPORTANT]
+> **Why this matters:** the goal is least privilege. An agent should hold exactly the access its skills require. Because the effective permission is the intersection of user and agent, over-granting either side widens the blast radius if something goes wrong. Operating responsibly at scale means keeping both sides tight.
 
 ## Summary
 
-We've seen how agent telemetry flows into SAP Cloud ALM and what an operations team watches there — evaluation rates, error patterns, session volumes, and trends — and how that complements the developer-facing monitoring in Joule Studio. Observability so far has been about *metrics*. In the next exercise we broaden governance to the **MCP servers** our agents depend on, and after that we'll look at observing actual agent *behaviour* with SAP Signavio.
+You've seen where an agent's identity truly lives — SAP Cloud Identity Services — the two operational models for granting it permissions, and the rule that governs runtime access: effective permission is the intersection of user and agent, enforced at the Agent Gateway. This is the access-control foundation that all subsequent observability and governance work builds on.
 
 ## Further Study
 
-* [SAP Cloud ALM](https://help.sap.com/docs/cloud-alm?locale=en-US)
-* [AI Agent Hub (reference architecture)](https://architecture.learning.sap.com/docs/ref-arch/jkg4j2)
+* [SAP Cloud Identity Services](https://help.sap.com/docs/cloud-identity-services?locale=en-US)
+* [Agentic AI and AI Agents on SAP Business AI Platform (reference architecture)](https://architecture.learning.sap.com/docs/ref-arch/98efa0)
 
 ## Next
 
-Continue to 👉 [Exercise 05 - Discover and govern an MCP server](../ex5/README.md)
+Continue to 👉 [Exercise 05 - Observe your agent in SAP Cloud ALM](../ex5/README.md)

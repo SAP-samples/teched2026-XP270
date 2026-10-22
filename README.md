@@ -28,10 +28,9 @@ The agent at the centre of the story is a **finance agent** running on Joule Stu
 - [Exercise 1 - Agents and the reference architecture](exercises/ex1/README.md)
 - [Exercise 2 - Explore and monitor your agent in Joule Studio](exercises/ex2/README.md)
 - [Exercise 3 - Govern your agent in the SAP LeanIX AI Agent Hub](exercises/ex3/README.md)
-- [Exercise 4 - Observe your agent in SAP Cloud ALM](exercises/ex4/README.md)
-- [Exercise 5 - Discover and govern an MCP server](exercises/ex5/README.md)
-- [Exercise 6 - Observe agent behaviour with SAP Signavio](exercises/ex6/README.md)
-- [(Optional) Exercise 7 - Manage access with SAP Cloud Identity Services](exercises/ex7/README.md)
+- [Exercise 4 - Manage access with SAP Cloud Identity Services](exercises/ex4/README.md)
+- [Exercise 5 - Observe your agent in SAP Cloud ALM](exercises/ex5/README.md)
+- [(Optional) Exercise 6 - Observe agent behaviour with SAP Signavio](exercises/ex6/README.md)
 
 The system details and credentials you need are listed once, in [Getting Started](exercises/ex0/README.md).
 

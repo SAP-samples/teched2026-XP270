@@ -84,7 +84,7 @@ Verification is the governance decision point: marking an agent verified formall
 
 ## Summary
 
-Your finance agent is now a fully governed, verified inventory record: discovered, promoted to the inventory, profiled with the right subscribers, placed in its lifecycle, and formally approved for production — with an auditable history of every action in the **Last Updated** tab. In the next exercise we'll turn to how its behaviour is observed in production through SAP Cloud ALM.
+Your finance agent is now a fully governed, verified inventory record: discovered, promoted to the inventory, profiled with the right subscribers, placed in its lifecycle, and formally approved for production — with an auditable history of every action in the **Last Updated** tab. In the next exercise we'll look at the access control layer — how the agent's identity and authorizations are managed in SAP Cloud Identity Services.
 
 ## Further Study
 
@@ -93,4 +93,4 @@ Your finance agent is now a fully governed, verified inventory record: discovere
 
 ## Next
 
-Continue to 👉 [Exercise 04 - Observe your agent in SAP Cloud ALM](../ex4/README.md)
+Continue to 👉 [Exercise 04 - Manage access with SAP Cloud Identity Services](../ex4/README.md)
