@@ -58,7 +58,7 @@ We've seen how to discover the Billing Document Retrieval agent in the AI Agent 
 
 ![The Billing Adjustment Agent in the inventory](images/03_billing-adjustment-agent-filter.png)
 
-👉 Select the Billing Adjustment Agent and explore the fact sheet:
+👉 Select the ***Billing Adjustment Agent*** and explore the fact sheet:
 
 ![Billing Adjustment Agent fact sheet](images/03_billing-adjustment-agent-fact-sheet.png)
 
@@ -81,6 +81,9 @@ SAP LeanIX gets agent usage data from SAP Cloud ALM. This allows Enterprise Arch
 There is also a connection with SAP Signavio where we can see if mining is active for the agent. Similar to Cloud ALM, we can access SAP Signavio directly by selecting the **Agent Behaviour on SAP Signavio** button.
 
 ![SAP Signavio mining status for the agent](images/03_agent-signavio-status.png)
+
+> [!IMPORTANT]
+> From SAP LeanIX we not only establish governance on our agents but we also control which data is mined in SAP Signavio. A fact sheet needs to be created for an agent so that we can initiate the mining process and its data to be available in SAP Signavio. Meaning, our ungoverned agents will not have their behaviour mined until they are properly registered and configured in SAP LeanIX.
 
 ## Summary
 
