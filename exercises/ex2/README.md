@@ -11,7 +11,7 @@ At the end of this exercise, you'll have successfully explored the finance agent
 > | ---- | ---- | ---- |
 > | Joule Studio | https://url.sap/fc8j65 | User `XP270-0NN` (your participant number) |
 
-## Build the agent
+## Step 0 - Understand the agent
 
 The finance team needs faster access to the 10 most recent billing documents from SAP S/4HANA Cloud. Our Billing Document Retrieval agent grants us access to the recent billing documents from SAP S/4HANA Cloud without having to navigate through SAP screens manually. It provides our finance team with full document details — including status, billing type, and payer — available instantly through a conversational agent.
 
@@ -20,7 +20,7 @@ The finance team needs faster access to the 10 most recent billing documents fro
 > [!TIP]
 > Interested in building as many agents as you want? **Visit the Developer Garage in Hall 1.2**. There you can find resources, guidance, and support for creating your own agents.
 
-## Open the Billing Document Retrieval agent
+## Step 1 - Open the Billing Document Retrieval agent
 
 👉 In **Joule Studio**, open the solution that contains the ***Billing Document Retrieval agent for XP270***. We land in the **Develop** tab where we can find the solution's artifacts, including the agent itself, its tools (MCP servers), and other related components.
 
@@ -33,7 +33,7 @@ The finance team needs faster access to the 10 most recent billing documents fro
 > [!TIP]
 > We can test the agent with mock data from the **Preview with Mock data** > **billing-document-retrieval-xp270** section.
 
-## The Manage Tab
+## Step 2 - Developer-level observability
 
 Joule Studio provides built-in **developer-level** observability that operates at two complementary levels at the solution level:
 
@@ -126,7 +126,7 @@ This level of detail makes it possible to answer precise questions: *Why did thi
 > [!TIP]
 > The agent traces are synced to Cloud ALM automatically, allowing you to correlate trace data with other operational and development activities in the cloud environment. Also, the aggregated trace data is synced from Cloud ALM to The AI Agent Hub in LeanIX. We will see this in future exercises.
 
-## Joule Studio Administrator - Solution Monitoring
+## Step 3 - Joule Studio Administrator - Solution Monitoring
 
 Administrators need a comprehensive overview of all solutions in their tenant and their status.
 

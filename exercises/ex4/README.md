@@ -53,7 +53,7 @@ This two-phase approach ensures security even when workflows span multiple runti
 
 ## Agents in Cloud Identity Services
 
-👉 In **SAP Cloud Identity Services**, navigate to the **Agents** tile in administration view.
+In **SAP Cloud Identity Services**, you would navigate to the **Agents** tile in administration view to manage agents.
 
 ![Agents list in SAP Cloud Identity Services](images/04_agents-list.png)
 

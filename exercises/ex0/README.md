@@ -57,7 +57,7 @@ Take two minutes to understand what each system is for before we start.
 
 ### SAP Cloud ALM
 
-👉 In a new tab, open the **SAP Cloud ALM** and sign in with the shared workspace credentials. From the Cloud ALM home, navigate to the **Operations** tab. You'll find here the **AI Agent Monitoring** tile — this is where Exercises 5 take place.
+👉 In a new tab, open **SAP Cloud ALM** and sign in with the shared workspace credentials. From the Cloud ALM home, navigate to the **Operations** tab. You'll find here the **AI Agent Monitoring** tile — this is where Exercises 5 take place.
 
 ![SAP Cloud ALM Operations tab](images/00_cloud-alm-operations-tab.png)
 
