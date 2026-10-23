@@ -30,7 +30,7 @@ The agent at the centre of the story is a **finance agent** running on Joule Stu
 - [Exercise 3 - Govern your agent in the SAP LeanIX AI Agent Hub](exercises/ex3/README.md)
 - [Exercise 4 - Manage access with SAP Cloud Identity Services](exercises/ex4/README.md)
 - [Exercise 5 - Observe your agent in SAP Cloud ALM](exercises/ex5/README.md)
-- [(Optional) Exercise 6 - Observe agent behaviour with SAP Signavio](exercises/ex6/README.md)
+- [Exercise 6 - Observe agent behaviour with SAP Signavio](exercises/ex6/README.md)
 
 The system details and credentials you need are listed once, in [Getting Started](exercises/ex0/README.md).
 

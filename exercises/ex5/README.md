@@ -116,4 +116,4 @@ We've seen how agent telemetry flows into SAP Cloud ALM and what an operations t
 
 ## Next
 
-Continue to 👉 [(Optional) Exercise 06 - Observe agent behaviour with SAP Signavio](../ex6/README.md)
+Continue to 👉 [Exercise 06 - Observe agent behaviour with SAP Signavio](../ex6/README.md)
