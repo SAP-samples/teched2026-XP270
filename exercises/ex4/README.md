@@ -14,6 +14,15 @@ At the end of this exercise, you'll have an understanding of how an agent's iden
 > [!IMPORTANT]
 > This is a read-only exercise. Unfortunately, we cannot provide hands-on access to SAP Cloud Identity Services but following the explanations and screenshots in this exercise will give you a clear understanding of how it works. The screenshots correspond to the SAP Cloud Identity Services managing the access for the workshop's landscape.
 
+## AI Agent Identity & Governance in SAP Landscapes
+
+The following diagram shows the major components of the SAP Joule integration from an IAM perspective at a leadership level. SAP Cloud Identity Services act as the central interface containing the SAP-landscape-relevant human identities and agent identities. SAP Cloud Identity Services integrates with the SAP applications in scope in an SAP-managed way. This architecture is a key pillar in the Agent Governance framework for an SAP landscape.
+
+![AI Agent Identity & Governance in SAP Landscapes reference architecture](images/04_reference-architecture.png)
+
+> [!TIP] <br>AI Agent Identity & Governance in SAP Landscapes - Reference architecture<br/><br/>
+> To learn more about the reference architecture please visit: https://architecture.learning.sap.com/docs/ref-arch/140bdb
+
 ## What is an Agent in SAP Cloud Identity Services?
 
 Agent identity represents AI and automation agents in SAP Cloud Identity Services. Agents can authenticate, receive authorization, and be managed like human users while retaining agent-specific capabilities and security controls.
@@ -68,6 +77,7 @@ You now know where an agent's identity truly lives — SAP Cloud Identity Servic
 
 * [Agents in SAP Cloud Identity Services](https://help.sap.com/docs/cloud-identity-services/cloud-identity-services/agents?locale=en-US&version=Cloud&ai=true)
 * [Agentic AI and AI Agents on SAP Business AI Platform (reference architecture)](https://architecture.learning.sap.com/docs/ref-arch/98efa0)
+* [AI Agent Identity & Governance in SAP Landscapes](https://architecture.learning.sap.com/docs/ref-arch/140bdb)
 
 ## Next
 
