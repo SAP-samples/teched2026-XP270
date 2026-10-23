@@ -18,7 +18,7 @@ Basic knowledge of AI agents and the SAP Business AI Platform is recommended. No
 
 ## Business Scenario
 
-Throughout this workshop you work for **GlobalFlex AG**, a manufacturer of custom industrial components. GlobalFlex runs SAP S/4HANA as its ERP backbone and has a fast-growing set of AI agents, introduced by different lines of business — often without central visibility. You are part of the newly established **AI Governance Center of Excellence**, and your job is to operate these agents responsibly: understand what they do, keep them observable, govern their lifecycle, and control who can access them.
+Throughout this workshop you work for **GlobalFlex AG**, a manufacturer of custom industrial components. GlobalFlex runs SAP S/4HANA Cloud as its ERP backbone and has a fast-growing set of AI agents, introduced by different lines of business — often without central visibility. You are part of the newly established **AI Governance Center of Excellence**, and your job is to operate these agents responsibly: understand what they do, keep them observable, govern their lifecycle, and control who can access them.
 
 The agent at the centre of the story is a **finance agent** running on Joule Studio. You will not build it from scratch — it has been pre-provisioned for you — so you can focus on operating it end to end.
 
