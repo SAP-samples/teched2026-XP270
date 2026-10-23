@@ -51,13 +51,13 @@ Take two minutes to understand what each system is for before we start.
 
 ### SAP LeanIX AI Agent Hub
 
-👉 Open the **SAP LeanIX** and sign in with the shared workspace credentials. From the LeanIX home, open the **AI Agent Hub** — this is where Exercises 3 takes place.
+👉 In a new tab, open the **SAP LeanIX** and sign in with the shared workspace credentials. From the LeanIX home, open the **AI Agent Hub** — this is where Exercises 3 takes place.
 
 ![SAP LeanIX AI Agent Hub home](images/00_leanix-ai-agent-hub-home.png)
 
 ### SAP Cloud ALM
 
-👉 Open the **SAP Cloud ALM** and sign in with the shared workspace credentials. From the Cloud ALM home, navigate to the **Operations** tab. You'll find here the **AI Agent Monitoring** tile — this is where Exercises 5 take place.
+👉 In a new tab, open the **SAP Cloud ALM** and sign in with the shared workspace credentials. From the Cloud ALM home, navigate to the **Operations** tab. You'll find here the **AI Agent Monitoring** tile — this is where Exercises 5 take place.
 
 ![SAP Cloud ALM Operations tab](images/00_cloud-alm-operations-tab.png)
 
