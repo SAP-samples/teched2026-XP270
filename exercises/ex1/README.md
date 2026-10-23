@@ -1,6 +1,6 @@
 # Exercise 01 - Agents and the reference architecture
 
-Now that you can reach the systems, let's build a shared understanding before we start clicking. Operating an agent responsibly is much easier once you know what an agent actually *is* on the SAP Business AI Platform, and how the systems you logged in to fit together.
+Now that you can reach the systems, let's build a shared understanding before we start going through the exercises. Operating an agent responsibly is much easier once you know what an agent actually *is* on the SAP Business AI Platform, and how the systems you logged in to fit together.
 
 At the end of this exercise, you'll have an understanding of what an AI agent is in Joule Studio and how the SAP Business AI Platform brings building, reasoning, and governance together — the mental model for everything that follows.
 
@@ -13,15 +13,15 @@ In Joule Studio, an **agent** is an AI-powered assistant that understands natura
 
 - **Understands natural language** — you ask questions or give commands in plain language.
 - **Accesses SAP systems** — it connects to SAP S/4HANA and other backends through **MCP (Model Context Protocol)** tools, routed via the **Agent Gateway**.
-- **Uses tools and skills** — a **skill** is a specific capability the agent can perform (for example, retrieving invoice data or calculating a financial impact). Skills define the scope of what the agent can do.
-- **Makes decisions** — it determines which APIs to call based on the context of the conversation.
+- **MCP and tools** — a **MCP** server provides a series of **tools** that an agent can use. For example, retrieving invoice data or calculating a financial impact.
+- **Makes decisions** — it determines which tools to call based on the context of the conversation.
 - **Communicates with other agents** — it can discover and invoke other agents through the **A2A (Agent-to-Agent)** protocol.
 
 > [!NOTE]
-> Every agent carries an **Agent Card** — its identity and capabilities (name, description, version, and the skills it exposes). You will see our finance agent's card in the next exercise, and the same card is what makes the agent discoverable across the landscape.
+> Every agent carries an **Agent Card** — its identity and capabilities (name, description, version, and the skills it exposes).
 
 > [!IMPORTANT]
-> All SAP system access goes through the **Agent Gateway** — a single, governed connection point. There is no direct database access and no uncontrolled connections. This matters for everything we do later: access is governed by your organization's existing authorization model, which is exactly what makes an agent safe to operate at scale.
+> All SAP system access goes through the **Agent Gateway** — a single, governed connection point. There is no direct database access and no uncontrolled connections. This matters for everything we do later: access is governed by the organization's existing authorization model, which is exactly what makes an agent safe to operate at scale.
 
 ## The SAP Business AI Platform: build, reason, govern
 
@@ -61,7 +61,7 @@ The hub addresses a fundamental challenge: while building and deploying individu
 
 ## Summary
 
-We now share a working definition of an agent — natural language in, governed SAP access out, via skills and the Agent Gateway — and a map of the SAP Business AI Platform's build / reason / govern pillars. We also know these patterns live on the SAP Architecture Center. In the next exercise we'll stop looking at diagrams and open our actual finance agent in Joule Studio.
+We now share a working definition of an agent — natural language in, governed SAP access out, via MCP and the Agent Gateway — and a map of the SAP Business AI Platform's build / reason / govern pillars. We also know these patterns live on the SAP Architecture Center. In the next exercise we'll stop looking at diagrams and open our actual finance agent in Joule Studio.
 
 ## Further Study
 

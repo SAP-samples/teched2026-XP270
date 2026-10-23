@@ -1,6 +1,6 @@
 # Exercise 05 - Observe your agent in SAP Cloud ALM
 
-In Exercise 2 we watched our agent's health from the *build* side, in Joule Studio. In Exercise 3 we governed it and in Exercise 4 we established its identity and access. Now we look at the dedicated **operations** view. In an enterprise, day-to-day production health is typically watched by an operations team — and the tool they use for that across SAP solutions is **SAP Cloud ALM**.
+In Exercise 2 we watched our agent's health from the *build* side, in Joule Studio. In Exercise 3 we learned how to put some governance on our agents and in Exercise 4 we established its identity and access. Now we look at the dedicated **operations** view. In an enterprise, day-to-day production health is typically watched by an operations team — and the tool they use for that across SAP solutions is **SAP Cloud ALM**.
 
 At the end of this exercise, you'll have an understanding of how agent telemetry reaches SAP Cloud ALM and what the operations team watches there.
 
@@ -10,9 +10,6 @@ At the end of this exercise, you'll have an understanding of how agent telemetry
 > | System | URL | Credentials |
 > | ---- | ---- | ---- |
 > | SAP Cloud ALM | https://url.sap/a3ml53 | User `XP270-0NN` (your participant number) |
-
-> [!IMPORTANT]
-> This exercise is a **guided, read-only walkthrough**. Your trainer will demonstrate SAP Cloud ALM live — you do not need to log in. Follow along with the screenshots and focus on *what* is being shown and *why* it matters, rather than clicking yourself.
 
 ## How telemetry gets to Cloud ALM
 
