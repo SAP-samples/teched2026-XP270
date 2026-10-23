@@ -22,10 +22,7 @@ At the end of this exercise, you'll have successfully logged in to the systems y
 
 Every participant has their own Joule Studio user and their own copy of the finance agent so you can work without affecting anyone else.
 
-👉 Note your **participant number** — it is the two-digit suffix of your Joule Studio user, in the form `XP270-0NN` (for example, `XP270-007`, where your number is `07`). You will reuse this number throughout the session to find *your* agent in both Joule Studio and the SAP LeanIX AI Agent Hub.
-
-> [!TIP]
-> Whenever an exercise asks you to search for *your* agent, use your participant number. In a shared workspace it is the quickest way to tell your agent apart from everyone else's.
+👉 Note your **participant number** — it is the two-digit suffix of your Joule Studio user, in the form `XP270-0NN` (for example, `XP270-007`, where your number is `07`). You will reuse this number throughout the session to login to the different systems.
 
 ## The systems you will use
 
@@ -39,20 +36,34 @@ Take two minutes to understand what each system is for before we start.
 
 ## Log in
 
+> [!IMPORTANT]
+> Do not make any changes in any of the systems yet. We will start working in each system through the exercises, beginning with Exercise 3. For now, just confirm you can log in.
+
+### Joule Studio
+
 👉 Open **Joule Studio** and sign in with your `XP270-0NN` user. You should land in Joule Work, with Joule Studio reachable from the main navigation.
 
 ![Joule Studio home in Joule Work](images/00_joule-studio-home.png)
 
-👉 Open the **SAP LeanIX** and sign in with the shared workspace credentials. From the LeanIX home, open the **AI Agent Hub** — this is where Exercises 3 to 6 take place.
+👉 Select **Joule Studio** from the main navigation in Joule Work.
+
+![Joule Studio in Joule Work](images/00_joule-studio-in-joule-work.png)
+
+### SAP LeanIX AI Agent Hub
+
+👉 Open the **SAP LeanIX** and sign in with the shared workspace credentials. From the LeanIX home, open the **AI Agent Hub** — this is where Exercises 3 takes place.
 
 ![SAP LeanIX AI Agent Hub home](images/00_leanix-ai-agent-hub-home.png)
 
-> [!IMPORTANT]
-> Do not make any changes in LeanIX yet. We will start working with it in Exercise 3. For now, just confirm you can log in.
+### SAP Cloud ALM
+
+👉 Open the **SAP Cloud ALM** and sign in with the shared workspace credentials. From the Cloud ALM home, navigate to the **Operations** tab. You'll find here the **AI Agent Monitoring** tile — this is where Exercises 5 take place.
+
+![SAP Cloud ALM Operations tab](images/00_cloud-alm-operations-tab.png)
 
 ## Summary
 
-You now have access to Joule Studio and the SAP LeanIX AI Agent Hub, you know your participant number, and you understand what each system in the landscape is for. In the next exercise we'll step back and look at what an agent actually *is* on the SAP Business AI Platform, and where all these systems fit in the reference architecture.
+You now have access to Joule Studio, the SAP LeanIX AI Agent Hub and SAP Cloud ALM, you know your participant number, and you have a general idea of what each system in the landscape is for. In the next exercise we'll step back and look at what an agent actually *is* on the SAP Business AI Platform, and where all these systems fit in the reference architecture.
 
 ## Further Study
 
