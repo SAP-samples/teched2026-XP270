@@ -1,6 +1,6 @@
 # Exercise 04 - Manage access with SAP Cloud Identity Services
 
-Throughout this session, access has been "governed by the organization's existing authorization model" — but where does that model actually live for an agent? When the finance agent reads SAP S/4HANA data, *whose* permissions apply? The answer sits in **SAP Cloud Identity Services**.
+Throughout this session, access has been "governed by the organization's existing authorization model" — but where does that model actually live for an agent? When the finance agent reads SAP S/4HANA Cloud data, *whose* permissions apply? The answer sits in **SAP Cloud Identity Services**.
 
 At the end of this exercise, you'll have an understanding of how an agent's identity and authorizations are managed in SAP Cloud Identity Services, and how permissions are enforced at runtime.
 
@@ -28,7 +28,7 @@ You can't create or delete agents through the administration console. The SAP pl
 
 SAP supports three categories of agents, each with a different level of administrator control:
 
-- LOB agents: The system provisions LOB agents as part of SAP line-of-business solutions such as SAP S/4HANA or SAP SuccessFactors.
+- LOB agents: The system provisions LOB agents as part of SAP line-of-business solutions such as SAP S/4HANA Cloud or SAP SuccessFactors.
 - Custom agents: Customers or partners build agents, for example using Joule Studio.
 - Third-party agents: Third-party agents are external AI tools that connect to the SAP landscape through the agent gateway.
 

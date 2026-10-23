@@ -45,7 +45,7 @@ The AI Agent Hub automatically discovers agents from connected systems: standard
 - the **Cloud Identity Services link**, which shows the agent's **identity record** — confirming the agent has a registered identity, so authentication, access policies, and user authorizations can be managed there. You will not have access to the Cloud Identity Services but screenshots have been provided in the workshop material for reference.
 
 > [!IMPORTANT]
-> **Why this matters:** the Details page shows whether the agent runs in a **productive** environment. If it does, real users may already be interacting with it — potentially against live SAP S/4HANA data — before any governance review has taken place. That is exactly the gap that an Enterprise Architect should be closing.
+> **Why this matters:** the Details page shows whether the agent runs in a **productive** environment. If it does, real users may already be interacting with it — potentially against live SAP S/4HANA Cloud data — before any governance review has taken place. That is exactly the gap that an Enterprise Architect should be closing.
 
 > [!TIP]
 > If you want to learn more about the entire governance process of AI Agents in SAP LeanIX, check out **BT161 - SAP AI Agent Hub: AI Governance Workshop from Discovery to Decommissioning** (https://github.com/SAP-Samples/teched2026-BT161).

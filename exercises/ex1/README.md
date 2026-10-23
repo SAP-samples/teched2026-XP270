@@ -12,7 +12,7 @@ At the end of this exercise, you'll have an understanding of what an AI agent is
 In Joule Studio, an **agent** is an AI-powered assistant that understands natural language, accesses SAP data, and executes tasks. Rather than a fixed, hard-coded program, it combines a large language model with tools, instructions, and the ability to decide what to do next. Concretely, an agent:
 
 - **Understands natural language** — you ask questions or give commands in plain language.
-- **Accesses SAP systems** — it connects to SAP S/4HANA and other backends through **MCP (Model Context Protocol)** tools, routed via the **Agent Gateway**.
+- **Accesses SAP systems** — it connects to SAP S/4HANA Cloud and other backends through **MCP (Model Context Protocol)** tools, routed via the **Agent Gateway**.
 - **MCP and tools** — a **MCP** server provides a series of **tools** that an agent can use. For example, retrieving invoice data or calculating a financial impact.
 - **Makes decisions** — it determines which tools to call based on the context of the conversation.
 - **Communicates with other agents** — it can discover and invoke other agents through the **A2A (Agent-to-Agent)** protocol.
@@ -32,7 +32,7 @@ Our finance agent does not live in isolation — it sits on the **SAP Business A
 | Pillar | What it provides | Where you'll see it today |
 |--------|------------------|---------------------------|
 | **Build** | Development tools for agents and workflows | Joule Studio (Exercise 2) |
-| **Contextualize and Reason** | Harmonized business data and domain knowledge the agent reasons over | The SAP S/4HANA data our agent reads via the Agent Gateway |
+| **Contextualize and Reason** | Harmonized business data and domain knowledge the agent reasons over | The SAP S/4HANA Cloud data our agent reads via the Agent Gateway |
 | **Govern** | Lifecycle management, compliance, and observability | SAP LeanIX AI Agent Hub, Cloud ALM, Signavio (Exercises 3 to 6) |
 
 This is the arc of the whole session: we **build and run** in Joule Studio, we **reason** over governed SAP data, and we **govern and observe** everything through the AI Agent Hub and the observability tools around it.
