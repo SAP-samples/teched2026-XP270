@@ -6,7 +6,8 @@ In this session you take the role of a member of the **AI Governance Center of E
 
 At the end of this exercise, you'll have successfully logged in to the systems you need and understood what each one is for.
 
-> [!IMPORTANT]  <br/>System details and credentials required to complete this session 🔐 <br/><br/>
+> [!IMPORTANT]
+> ***System details and credentials for this exercise 🔐*** <br/><br/>
 > These are the systems you will use. They are listed **once, here** — later exercises refer to them by name. Your trainer will share the actual URLs and credentials at the start of the session; wherever you see a `<PLACEHOLDER>` below, use the value provided to you.
 >
 > | System | URL | Credentials |

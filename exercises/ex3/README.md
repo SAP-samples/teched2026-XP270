@@ -4,7 +4,8 @@ Now that we understand our agent and can see it is healthy in Joule Studio, we s
 
 At the end of this exercise, you'll be familiar with the agent information available in AI Agent Hub, the discovery of agents, the fact sheet structure, and analytics available for an agent.
 
-> [!IMPORTANT]  <br/>System details and credentials for this exercise 🔐 <br/><br/>
+> [!IMPORTANT]
+> ***System details and credentials for this exercise 🔐*** <br/><br/>
 > The table below shows the system you will use in this exercise. Refer to [Exercise 00](../ex0/README.md) for the full credentials list.
 >
 > | System | URL | Credentials |

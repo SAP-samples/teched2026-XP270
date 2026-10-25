@@ -4,7 +4,8 @@ Metrics tell us *whether* an agent is healthy but they don't tell us *how it act
 
 At the end of this exercise, you'll have an understanding of how SAP Signavio mines an agent's execution traces to reveal its real behaviour, and how that complements the monitoring and governance you've already done.
 
-> [!IMPORTANT]  <br/>System details and credentials for this exercise 🔐 <br/><br/>
+> [!IMPORTANT]
+> ***System details and credentials for this exercise 🔐*** <br/><br/>
 > The table below shows the system you will use in this exercise. Refer to [Exercise 00](../ex0/README.md) for the full credentials list.
 >
 > | System | URL | Credentials |
