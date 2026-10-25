@@ -52,7 +52,7 @@ These patterns are published and maintained on the **SAP Architecture Center** �
 
 👉 Open the **Agentic AI and AI Agents on SAP Business AI Platform** reference architecture and check out the solution diagram: [architecture.learning.sap.com/docs/ref-arch/98efa0](https://architecture.learning.sap.com/docs/ref-arch/98efa0)
 
-![Agentic AI & AI agents architecture diagram](../../images/agentic-ai-ai-agents-diagram.png)
+![Agentic AI & AI agents architecture diagram](../../images/xp270.png)
 
 👉 Open the **AI Agent Hub** reference architecture and note how discovery, governance, and observability connect: [architecture.learning.sap.com/docs/ref-arch/jkg4j2](https://architecture.learning.sap.com/docs/ref-arch/jkg4j2).
 
