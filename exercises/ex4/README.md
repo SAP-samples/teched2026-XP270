@@ -5,6 +5,7 @@ Throughout this session, access has been "governed by the organization's existin
 At the end of this exercise, you'll have an understanding of how an agent's identity and authorizations are managed in SAP Cloud Identity Services, and how permissions are enforced at runtime.
 
 > [!IMPORTANT]
+>
 > ***System details and credentials for this exercise 🔐*** <br/><br/>
 > The table below shows the system referenced in this exercise. Refer to [Exercise 00](../ex0/README.md) for the full credentials list.
 >
@@ -21,7 +22,9 @@ The following diagram shows the major components of the SAP Joule integration fr
 
 ![AI Agent Identity & Governance in SAP Landscapes reference architecture](images/04_reference-architecture.png)
 
-> [!TIP] <br>AI Agent Identity & Governance in SAP Landscapes - Reference architecture<br/><br/>
+> [!TIP]
+>
+> ***AI Agent Identity & Governance in SAP Landscapes - Reference architecture***<br/><br/>
 > To learn more about the reference architecture please visit: https://architecture.learning.sap.com/docs/ref-arch/140bdb
 
 ## What is an Agent in SAP Cloud Identity Services?

@@ -21,9 +21,9 @@ The finance team needs faster access to the 10 most recent billing documents fro
 > [!TIP]
 > Interested in building as many agents as you want? **Visit the Developer Garage in Hall 1.2**. There you can find resources, guidance, and support for creating your own agents.
 
-## Step 1 - Open the Billing Document Retrieval agent
+## Step 1 - Open the Billing Document Retrieval XP270 agent
 
-👉 In **Joule Studio**, open the solution that contains the ***Billing Document Retrieval agent for XP270***. We land in the **Develop** tab where we can find the solution's artifacts, including the agent itself, its tools (MCP servers), and other related components.
+👉 In **Joule Studio**, open the solution that contains the Billing Document Retrieval agent ***(billing-document-retrieval-xp270)***. We land in the **Develop** tab where we can find the solution's artifacts, including the agent itself, its tools (MCP servers), and other related components.
 
 ![The Billing Document Retrieval agent in Joule Studio - detail view](images/02_agent-overview.png)
 

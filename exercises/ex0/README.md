@@ -54,6 +54,10 @@ Take two minutes to understand what each system is for before we start.
 
 👉 In a new tab, open the **SAP LeanIX** and sign in with the shared workspace credentials. From the LeanIX home, open the **AI Agent Hub** — this is where Exercises 3 takes place.
 
+> [!NOTE]
+>
+> The first time you login, it is likely that you will need to set a job role and what you will use the system for. Select the appropriate options, e.g. *Enterprise Architect* and *Establish architecture transparency and practices* respectively and continue by selecting **Submit**.
+
 ![SAP LeanIX AI Agent Hub home](images/00_leanix-ai-agent-hub-home.png)
 
 ### SAP Cloud ALM

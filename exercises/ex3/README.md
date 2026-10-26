@@ -28,13 +28,13 @@ The AI Agent Hub automatically discovers agents from connected systems: standard
 > [!NOTE]
 > **What you are seeing:** a real-time governance posture — how many agents exist, how many are verified, and how much AI activity is happening in your landscape right now. The **Inventory** holds everything known to the system; the **AI Agent Discovery Inbox** surfaces the items that need your attention.
 
-## Step 2 — Find the Billing Document Retrieval agent in the Discovery Inbox
+## Step 2 — Find the Billing Document Retrieval agent for XP270 in the Discovery Inbox
 
 👉 Navigate to **Inventory → Inventory Tools** *(top right)* **→ Discovery Inbox → AI Agent Discovery**.
 
 👉 Apply the filter **Status: Action Needed**, add the **Build Type: Custom** filter, then search for the ***billing-document-retrieval-xp270*** agent.
 
-![Billing Document Retrieval agent in the Discovery Inbox](images/03_billing-document-retrieval-xp270-details.png)
+![Billing Document Retrieval agent for XP270 in the Discovery Inbox](images/03_billing-document-retrieval-xp270-details.png)
 
 👉 Open your discovery item and review the **Overview** — what the agent claims to do, when it first appeared, its **Build Type** (Custom), and the **Discovered Fact Sheets**: the IT component (the Joule Studio runtime), the provider (SAP), and the agent itself (***billing-document-retrieval-xp270***).
 
