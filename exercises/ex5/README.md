@@ -20,7 +20,9 @@ Session telemetry from SAP-managed agents flows automatically into **SAP Cloud A
 > [!NOTE]
 > Recall the SAP Connections section in the AI Agent Hub dashboard from Exercise 3 — **SAP Cloud ALM** was one of them. The AI Agent Hub also surfaces this observability so governance and operations share a consistent view.
 
-> [!IMPORTANT] <br/>Screenshots in this exercise<br/><br/>
+> [!IMPORTANT]
+>
+> ***Screenshots in this exercise***<br/><br/>
 > The screenshots shown in this exercise are from a different environment. The data in the tenant we have access to does not reflect the screenshots. **This is on purpose.** We want to show you the bleeding edge of the product, which will be available in a week time max. That said, still follow the steps and compare them with what you see in your environment. To clearly identify screenshots from our bleeding edge environment, look for the following text before the screenshot - ⚠️ *Screenshot from prerelease environment* 🏎️.
 
 ## Step 1 — Access AI Agent Monitoring
