@@ -68,7 +68,7 @@ An analysis configuration is created in SAP Signavio Process Intelligence for th
 The ***Analyze Agent Execution Performance*** configuration provides a high-level overview of your AI agent operations. This configuration is connected to live system data as you can see in the **Data Input** column, its source is a **Data Pipeline**.
 
 > [!NOTE]
-> THe XP270 users don't have access to the Data Pipeline itself, the screenshots below show the administrator view with access to the data pipeline object.
+> The XP270 users don't have access to the Data Pipeline itself, the screenshots below show the administrator view with access to the data pipeline object.
 
 ### The Analyze Agent Execution Performance data pipeline
 
